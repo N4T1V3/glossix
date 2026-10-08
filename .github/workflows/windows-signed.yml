@@ -1,9 +1,6 @@
-name: Build Glossix Windows installer
+name: Build signed Glossix Windows installer
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - 'v*'
 permissions:
   contents: read
 jobs:
@@ -19,7 +16,10 @@ jobs:
       - name: Connect the public release repository
         run: npm run configure:updates -- https://github.com/${{ github.repository }}
       - name: Build the Windows installer and update metadata
-        run: npm run dist:win
+        run: npm run dist:win:signed
+        env:
+          CSC_LINK: ${{ secrets.WINDOWS_CERTIFICATE }}
+          CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: Glossix-Windows-release

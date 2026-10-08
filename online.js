@@ -2,7 +2,7 @@
 (function(root){
   const config={url:'https://ztuboafotonykidnywoq.supabase.co',key:'sb_publishable_RZf6bf2gMGOWfNscz5CzBA_BniciHal'};
   const sessionKey='glossix-auth-'+config.url;
-  function defaultStorage(){try{return root.localStorage||null}catch{return null}}
+  function defaultStorage(){try{if(root.desktop?.authStorage){const secure=root.desktop.authStorage;const legacy=root.localStorage?.getItem(sessionKey);if(legacy){try{if(!secure.getItem(sessionKey))secure.setItem(sessionKey,legacy);}finally{root.localStorage.removeItem(sessionKey);}}return secure;}return root.localStorage||null}catch{return null}}
   function createClient(fetchImpl=fetch,storage=defaultStorage()){
     let session=null,refreshing=null,saved=false;
     function persist(){try{if(storage){if(session)storage.setItem(sessionKey,JSON.stringify(session));else storage.removeItem(sessionKey);saved=!!session;}else saved=false;}catch{saved=false;}}

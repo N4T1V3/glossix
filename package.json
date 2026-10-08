@@ -6,8 +6,9 @@
   "scripts": {
     "start": "electron .",
     "dist:win": "electron-builder --config electron-builder.cjs --win --publish never",
-    "release:win": "electron-builder --config electron-builder.cjs --win --publish always",
-    "configure:updates": "node scripts/configure-updates.cjs"
+    "release:win": "node scripts/build-signed.cjs --publish",
+    "configure:updates": "node scripts/configure-updates.cjs",
+    "dist:win:signed": "node scripts/build-signed.cjs"
   },
   "devDependencies": {
     "electron": "44.7.0",

@@ -1,0 +1,1 @@
+const {spawnSync}=require('node:child_process');const build=require.resolve('electron-builder/out/cli/cli.js');const r=spawnSync(process.execPath,[build,'--config','electron-builder.cjs','--win','--publish',process.argv.includes('--publish')?'always':'never'],{stdio:'inherit',env:{...process.env,GLOSSIX_REQUIRE_SIGNING:'true'}});process.exit(r.status??1);
