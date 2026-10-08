@@ -1,0 +1,2 @@
+const {contextBridge,ipcRenderer}=require('electron');
+contextBridge.exposeInMainWorld('desktop',{speech:payload=>ipcRenderer.invoke('speech',payload),updates:{status:()=>ipcRenderer.invoke('updates:status'),check:()=>ipcRenderer.invoke('updates:check'),install:()=>ipcRenderer.invoke('updates:install'),subscribe:callback=>{const listener=(_,state)=>callback(state);ipcRenderer.on('updates:status',listener);return ()=>ipcRenderer.removeListener('updates:status',listener);}}});
