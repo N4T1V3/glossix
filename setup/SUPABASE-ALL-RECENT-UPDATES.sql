@@ -1,3 +1,12 @@
+-- Glossix: combined database update through app version 0.2.9.
+-- Run this entire file once in Supabase SQL Editor, as the project owner.
+-- Includes course content/progress/points/levels, friends and leaderboards,
+-- preset profiles, username filtering/uniqueness, spoken-language preferences,
+-- banners, all 50 level-earned backgrounds, private owner cosmetic grants,
+-- security permissions and all 86 avatar IDs (including Kirin).
+-- Rerunnable: existing accounts, points, progress and owner grants are retained.
+-- App layout, animation and avatar image files ship with the app, not SQL.
+
 -- Paste this entire script into your Glossix project's SQL Editor and Run.
 -- Additive, rerunnable migration. No existing Auth users or learning data are deleted.
 begin;
