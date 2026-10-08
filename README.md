@@ -10,7 +10,7 @@ Use Node.js 22 or newer. Run `npm ci`, then `npm run dist:win`. The installer is
 
 The updater is configured for https://github.com/N4T1V3/glossix. The included workflow builds the Windows installer and update files on a standard Windows runner. In GitHub, open **Actions → Build Glossix Windows installer → Run workflow**. Download its **Glossix-Windows-release** artifact when it succeeds.
 
-Extract the artifact and create a normal release tagged **v0.2.2**. Attach the setup EXE, its blockmap and latest.yml from that same build. Publish the release. Distribute that installer to users; portable copies do not install updates.
+Extract the artifact and create a normal release tagged **v0.2.3**. Attach the setup EXE, its blockmap and latest.yml from that same build. Publish the release. Distribute that installer to users; portable copies do not install updates.
 
 For subsequent releases, raise the version in package.json, rebuild and publish the matching files in a new release. The app checks at launch and while open, downloads updates and offers a restart to install.
 
