@@ -19,12 +19,12 @@ jobs:
       - name: Connect the public release repository
         run: npm run configure:updates -- https://github.com/${{ github.repository }}
       - name: Build the Windows installer and update metadata
-        run: npm run dist:win
+        run: npm run dist:win -- --config.directories.output=release
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: Glossix-Windows-release
           path: |
-            ../installer/Glossix-Setup-*.exe
-            ../installer/*.blockmap
-            ../installer/latest.yml
+            release/Glossix-Setup-*.exe
+            release/*.blockmap
+            release/latest.yml
           if-no-files-found: error
