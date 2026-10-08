@@ -16,6 +16,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run build:translations
       - name: Connect the public release repository
         run: npm run configure:updates -- https://github.com/${{ github.repository }}
       - name: Build the Windows installer and update metadata
