@@ -1,4 +1,4 @@
--- Glossix: combined database update through app version 0.2.11.
+-- Glossix: combined database update through app version 0.2.13.
 -- Run this entire file once in Supabase SQL Editor, as the project owner.
 -- Includes course content/progress/points/levels, friends and leaderboards,
 -- preset profiles, username filtering/uniqueness, spoken-language preferences,
@@ -85,7 +85,7 @@ begin
   insert into glossix_private.friendships(low_id,high_id,requester) values(l,h,u);
  elsif p_action='accept' then
   if f.low_id is null or f.status<>'pending' or f.requester=u then raise exception 'Only the recipient can accept this request'; end if;
-  if (select count(*) from glossix_private.friendships where status='accepted' and (low_id=u or high_id=u))>=200 or (select count(*) from glossix_private.friendships where status='accepted' and (low_id=t or high_id=t))>=200 then raise exception 'Friend limit reached'; end if;
+  if (select count(*) from glossix_private.friendships where status='accepted' and (low_id=u or high_id=u))::numeric>=200 or (select count(*) from glossix_private.friendships where status='accepted' and (low_id=t or high_id=t))::numeric>=200 then raise exception 'Friend limit reached'; end if;
   update glossix_private.friendships set status='accepted' where low_id=l and high_id=h;
  elsif p_action='decline' then
   if f.low_id is null or f.status<>'pending' or f.requester=u then raise exception 'Only the recipient can decline this request'; end if;
@@ -11636,4 +11636,79 @@ create or replace function public.glossix_notes_history() returns jsonb language
 create or replace function public.glossix_notes_revision(p_revision bigint) returns jsonb language plpgsql security definer set search_path='' as $$declare r glossix_private.note_revisions%rowtype;begin if auth.uid() is null then raise exception 'Please sign in first';end if;select * into r from glossix_private.note_revisions where user_id=auth.uid() and revision=p_revision;if not found then raise exception 'Saved revision not found';end if;return jsonb_build_object('body',r.body,'revision',r.revision);end$$;
 revoke all on function public.glossix_profile_extras_get(uuid),public.glossix_favourites_set(text[]),public.glossix_avatar_border_set(text),public.glossix_notes_get(),public.glossix_notes_save(text,bigint),public.glossix_notes_history(),public.glossix_notes_revision(bigint) from public,anon,authenticated;
 grant execute on function public.glossix_profile_extras_get(uuid),public.glossix_favourites_set(text[]),public.glossix_avatar_border_set(text),public.glossix_notes_get(),public.glossix_notes_save(text,bigint),public.glossix_notes_history(),public.glossix_notes_revision(bigint) to authenticated;
+commit;
+
+-- Glossix 0.2.12: self-paced lesson access; spaced memory reviews remain.
+begin;
+create or replace function public.glossix_course_state(p_language text) returns jsonb language plpgsql security definer set search_path='' as $$
+declare u uuid:=auth.uid();d date:=(now() at time zone 'UTC')::date;score numeric;progress jsonb;daily jsonb;unlocked_lesson integer;done jsonb;last_lesson integer;
+begin
+ if p_language not in ('ru','it') or p_language is null then raise exception 'Unsupported language';end if;
+ if u is null then raise exception 'Please sign in first';end if;
+ if not exists(select 1 from glossix_private.profiles where user_id=u) then return jsonb_build_object('profileRequired',true,'points','0','unlocked',0,'items','{}'::jsonb,'daily','{}'::jsonb,'completedLessons','[]'::jsonb);end if;
+ insert into glossix_private.learning_accounts(user_id,language) values(u,p_language) on conflict do nothing;
+ select unlocked into unlocked_lesson from glossix_private.learning_accounts where user_id=u and language=p_language;
+ select coalesce(sum(points),0) into score from glossix_private.points where user_id=u;
+ select coalesce(max(lesson)+1,0) into last_lesson from glossix_private.learning_items where language=p_language;
+ while unlocked_lesson<last_lesson and not exists(select 1 from glossix_private.learning_items x left join glossix_private.learning_progress r on r.user_id=u and r.item_id=x.id where x.language=p_language and x.lesson=unlocked_lesson and coalesce(r.successes,0)<1) loop unlocked_lesson:=unlocked_lesson+1;end loop;
+ update glossix_private.learning_accounts set unlocked=unlocked_lesson where user_id=u and language=p_language;
+ select coalesce(jsonb_object_agg(item_id,jsonb_build_object('successes',successes,'lastSuccess',case when last_success is null then null else floor(extract(epoch from last_success)*1000) end,'due',floor(extract(epoch from due)*1000),'interval',interval_days,'attempts',attempts,'mistakes',mistakes)),'{}'::jsonb) into progress from glossix_private.learning_progress where user_id=u;
+ select jsonb_build_object('attempts',coalesce((select attempts from glossix_private.learning_daily where user_id=u and day=d),0),'correct',coalesce((select correct from glossix_private.learning_daily where user_id=u and day=d),0),'successIds',coalesce((select jsonb_agg(item_id) from glossix_private.learning_recalls where user_id=u and day=d),'[]'::jsonb),'spacedIds',coalesce((select jsonb_agg(item_id) from glossix_private.learning_recalls where user_id=u and day=d and spaced),'[]'::jsonb),'challenges',coalesce((select jsonb_agg(substr(activity,11)) from glossix_private.points where user_id=u and earned_day=d and activity like 'challenge:%'),'[]'::jsonb)) into daily;
+ select coalesce(jsonb_agg(substr(activity,8)),'[]'::jsonb) into done from glossix_private.points where user_id=u and activity like 'lesson:%';
+ return jsonb_build_object('curriculumLessons',(select coalesce(max(lesson)+1,0) from glossix_private.learning_items where language=p_language),'points',score::text,'level',public.glossix_level(score),'unlocked',unlocked_lesson,'items',progress,'daily',jsonb_build_object(d::text,daily),'completedLessons',done,'awards','{}'::jsonb);
+end$$;
+create or replace function public.glossix_course_answer(p_language text,p_item text,p_answer text,p_assisted boolean default false) returns jsonb language plpgsql security definer set search_path='' as $$
+declare u uuid:=auth.uid();d date:=(now() at time zone 'UTC')::date;i glossix_private.learning_items%rowtype;p glossix_private.learning_progress%rowtype;correct_answer boolean;spaced_review boolean;earned integer:=0;unlocked_lesson integer;n integer;review_n integer;attempt_n integer;correct_n integer;lesson_id text;
+begin
+ if p_language not in ('ru','it') or p_language is null then raise exception 'Unsupported language';end if;
+ if u is null then raise exception 'Please sign in first';end if;
+ perform 1 from glossix_private.profiles where user_id=u for update;if not found then raise exception 'Choose your username first';end if;
+ insert into glossix_private.learning_accounts(user_id,language) values(u,p_language) on conflict do nothing;
+ select unlocked into unlocked_lesson from glossix_private.learning_accounts where user_id=u and language=p_language;
+ select * into i from glossix_private.learning_items where id=p_item and language=p_language;if not found or i.lesson>unlocked_lesson then raise exception 'This lesson is locked';end if;
+ if length(p_answer)>400 then raise exception 'Answer is too long';end if;
+ correct_answer:=glossix_private.clean_answer(p_answer)=glossix_private.clean_answer(i.answer);
+ if p_assisted then return jsonb_build_object('correct',correct_answer,'assisted',true,'earned',0,'state',public.glossix_course_state(p_language));end if;
+ insert into glossix_private.learning_daily(user_id,day,attempts,correct) values(u,d,1,case when correct_answer then 1 else 0 end) on conflict(user_id,day) do update set attempts=glossix_private.learning_daily.attempts+1,correct=glossix_private.learning_daily.correct+case when correct_answer then 1 else 0 end;
+ insert into glossix_private.learning_progress(user_id,item_id) values(u,p_item) on conflict do nothing;
+ select * into p from glossix_private.learning_progress where user_id=u and item_id=p_item;
+ if correct_answer then
+  perform glossix_private.learning_language_touch(u,p_language);
+  spaced_review:=p.last_success is not null and (p.last_success at time zone 'UTC')::date<>d and now()-p.last_success>=interval '20 hours';
+  if p.last_success is null or spaced_review then p.successes:=p.successes+1;p.interval_days:=case when p.successes<2 then 1 else least(30,power(2,least(p.successes-1,5))::integer) end;p.last_success:=now();p.due:=now()+make_interval(days=>p.interval_days);end if;
+  update glossix_private.learning_progress set successes=p.successes,last_success=p.last_success,due=p.due,interval_days=p.interval_days,attempts=attempts+1 where user_id=u and item_id=p_item;
+  insert into glossix_private.learning_recalls(user_id,item_id,day,spaced) values(u,p_item,d,spaced_review) on conflict(user_id,item_id,day) do update set spaced=glossix_private.learning_recalls.spaced or excluded.spaced;
+  earned:=earned+glossix_private.credit(u,'learning-recall:'||p_item,5);
+  lesson_id:=p_language||'-l'||lpad((i.lesson+1)::text,greatest(2,length((i.lesson+1)::text)),'0');
+  if not exists(select 1 from glossix_private.learning_items x left join glossix_private.learning_progress r on r.user_id=u and r.item_id=x.id where x.language=p_language and x.lesson=i.lesson and coalesce(r.successes,0)<1) then earned:=earned+glossix_private.credit(u,'lesson:'||lesson_id,50,true);end if;
+  if i.lesson=unlocked_lesson and not exists(select 1 from glossix_private.learning_items x left join glossix_private.learning_progress r on r.user_id=u and r.item_id=x.id where x.language=p_language and x.lesson=i.lesson and coalesce(r.successes,0)<1) then update glossix_private.learning_accounts set unlocked=unlocked+1 where user_id=u and language=p_language;end if;
+ else update glossix_private.learning_progress set successes=0,last_success=null,due=now()+interval '10 minutes',interval_days=0,attempts=attempts+1,mistakes=mistakes+1 where user_id=u and item_id=p_item;end if;
+ select count(*),count(*) filter(where learning_recalls.spaced) into n,review_n from glossix_private.learning_recalls where user_id=u and day=d;
+ select attempts,correct into attempt_n,correct_n from glossix_private.learning_daily where user_id=u and day=d;
+ if n>=5 then earned:=earned+glossix_private.credit(u,'daily-practice',20);end if;
+ if n>=10 then earned:=earned+glossix_private.credit(u,'challenge:vocabulary',25);end if;
+ if n>=5 and correct_n::bigint*100>=attempt_n::bigint*80 then earned:=earned+glossix_private.credit(u,'challenge:accuracy',25);end if;
+ if review_n>=5 then earned:=earned+glossix_private.credit(u,'challenge:memory',25);end if;
+ return jsonb_build_object('correct',correct_answer,'assisted',false,'earned',earned,'state',public.glossix_course_state(p_language));
+end$$;
+commit;
+
+-- Glossix 0.2.13 leaderboard appearance. Run as project owner.
+begin;
+alter table glossix_private.profile_extras add column if not exists leaderboard_design text not null default 'none';
+insert into glossix_private.cosmetic_catalog(item_id,minimum_level) values ('leaderboard:woven',20),('leaderboard:tidal',35),('leaderboard:chevron',50),('leaderboard:botanical',75),('leaderboard:bronze',100),('leaderboard:crystal',150),('leaderboard:celestial',200),('leaderboard:amethyst',250),('leaderboard:aurora',350),('leaderboard:sapphire',450),('leaderboard:silver',550),('leaderboard:phoenix',650),('leaderboard:gold',750),('leaderboard:nebula',850),('leaderboard:imperial',950),('leaderboard:supreme',1000) on conflict(item_id) do update set minimum_level=excluded.minimum_level;
+create or replace function public.glossix_profile_extras_get(p_user_id uuid) returns jsonb language plpgsql security definer set search_path='' as $$declare r glossix_private.profile_extras%rowtype;n bigint;begin
+ perform public.glossix_profile_view(p_user_id);
+ select * into r from glossix_private.profile_extras where user_id=p_user_id;
+ select count(*) into n from glossix_private.friendships where status='accepted' and (low_id=p_user_id or high_id=p_user_id);
+ return jsonb_build_object('leaderboard_design',case when public.glossix_level(coalesce((select sum(points) from glossix_private.points where user_id=p_user_id),0))::numeric>=20 and glossix_private.cosmetic_allowed(p_user_id,'leaderboard:'||r.leaderboard_design) then r.leaderboard_design else 'none' end,'friend_count',n,'favourite_languages',coalesce(r.favourite_languages,'{}'::text[]),'border_id',case when glossix_private.cosmetic_allowed(p_user_id,'avatar-border:'||coalesce(r.border_id,'none')) then coalesce(r.border_id,'none') else 'none' end);end$$;
+create or replace function public.glossix_leaderboard_design_set(p_design text) returns jsonb language plpgsql security definer set search_path='' as $$declare u uuid:=auth.uid();begin
+if u is null then raise exception 'Please sign in first';end if;perform public.glossix_profile_view(u);
+if p_design is null or (p_design<>'none' and (public.glossix_level(coalesce((select sum(points) from glossix_private.points where user_id=u),0))::numeric<20 or not glossix_private.cosmetic_allowed(u,'leaderboard:'||p_design))) then raise exception 'This leaderboard design is locked or unavailable';end if;
+insert into glossix_private.profile_extras(user_id,leaderboard_design) values(u,p_design) on conflict(user_id) do update set leaderboard_design=excluded.leaderboard_design;return public.glossix_profile_extras_get(u);end$$;
+create or replace function public.glossix_leaderboard_languages(p_scope text default 'global',p_period text default 'weekly') returns jsonb language sql security definer set search_path='' as $$
+select coalesce(jsonb_agg(to_jsonb(b)||jsonb_build_object('active_languages',p.active_languages,'recent_language',p.recent_language,'avatar_id',p.avatar_id,'border_id',case when glossix_private.cosmetic_allowed(b.user_id,'avatar-border:'||e.border_id) then e.border_id else 'none' end,'leaderboard_design',case when b.account_level::numeric>=20 and glossix_private.cosmetic_allowed(b.user_id,'leaderboard:'||e.leaderboard_design) then e.leaderboard_design else 'none' end) order by b.rank_position,b.username),'[]'::jsonb) from public.glossix_leaderboard_levels(p_scope,p_period) b join glossix_private.profiles p on p.user_id=b.user_id left join glossix_private.profile_extras e on e.user_id=b.user_id;
+$$;
+revoke all on function public.glossix_leaderboard_design_set(text) from public,anon,authenticated;
+grant execute on function public.glossix_leaderboard_design_set(text) to authenticated;
 commit;
