@@ -1,0 +1,1744 @@
+{
+  "removedCount": 82,
+  "removed": [
+    {
+      "id": "dict-open-59493",
+      "ru": "блядский",
+      "en": "fucking; damn; goddamn; bloody; whorish; slutty; tarty",
+      "hint": "blYAdskeey",
+      "group": "other",
+      "source": "OpenRussian",
+      "sourceId": "59493",
+      "translated": true,
+      "meanings": {
+        "en": "fucking; damn; goddamn; bloody; whorish; slutty; tarty"
+      },
+      "meaningSources": {
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59494",
+      "ru": "блядство",
+      "en": "whoredom, fornication, promiscuity, debauchery; mess, chaos, outrage, disgrace",
+      "hint": "blYAdstvo",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59494",
+      "translated": true,
+      "meanings": {
+        "en": "whoredom, fornication, promiscuity, debauchery; mess, chaos, outrage, disgrace",
+        "de": "Hurerei, Unzucht, Ausschweifung; Schweinerei, Saukram, Chaos, Skandal"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-21313",
+      "ru": "блядь",
+      "en": "fuck",
+      "hint": "blyad",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "53291",
+      "translated": true,
+      "meanings": {
+        "en": "fuck",
+        "de": "Arschloch, Arsch, Scheißkerl, Dreckskerl, Schuft, Haufen Scheiße; Hure, Nutte, Schlampe, Schnalle"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60020",
+      "ru": "выебать",
+      "en": "to fuck (vulgar), to screw (vulgar), to bang (vulgar), to screw over (vulgar), to shaft (vulgar), to rip off (vulgar)",
+      "hint": "vYyebat",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "60020",
+      "translated": true,
+      "meanings": {
+        "en": "to fuck (vulgar), to screw (vulgar), to bang (vulgar), to screw over (vulgar), to shaft (vulgar), to rip off (vulgar)",
+        "de": "ficken (vulgär), bumsen (vulgär), poppen (vulgär), jemanden fertigmachen (umgangssprachlich, vulgär), bescheißen (vulgär)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-25895",
+      "ru": "гадёныш",
+      "en": "bastard",
+      "hint": "gadYOnysh",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "25895",
+      "translated": true,
+      "meanings": {
+        "en": "bastard",
+        "es": "granuja",
+        "de": "kleines Scheusal, Biest"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-51559",
+      "ru": "говнецо",
+      "en": "little piece of crap, a bit of shit, rubbish, junk",
+      "hint": "govnyetsO",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "51559",
+      "translated": true,
+      "meanings": {
+        "en": "little piece of crap, a bit of shit, rubbish, junk",
+        "de": "Scheißchen, kleines bisschen Scheiße, Dreck"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-51562",
+      "ru": "говнистый",
+      "en": "shitty, crappy, full of crap, filthy",
+      "hint": "govnEEstyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "51562",
+      "translated": true,
+      "meanings": {
+        "en": "shitty, crappy, full of crap, filthy",
+        "de": "scheiße, beschissen, voller Scheiße, mies"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-3486",
+      "ru": "говно",
+      "en": "shit, bullshit; shit, turd; motherfucker, son of a bitch",
+      "hint": "govnO",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "7942",
+      "translated": true,
+      "meanings": {
+        "en": "shit, bullshit; shit, turd; motherfucker, son of a bitch",
+        "de": "Scheiße, Scheiß, Scheißdreck, Kacke, Kot, ; Scheißkerl, Scheißer; Scheißer, Scheißkerl"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-51565",
+      "ru": "гомно",
+      "en": "shit, crap, excrement; crap, garbage, rubbish, nonsense",
+      "hint": "gomnO",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "51565",
+      "translated": true,
+      "meanings": {
+        "en": "shit, crap, excrement; crap, garbage, rubbish, nonsense",
+        "de": "Scheiße, Kot; Mist, Scheiß, Quatsch"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-1817",
+      "ru": "дерьмо",
+      "en": "shit, crap; shithead",
+      "hint": "dyermO",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "4076",
+      "translated": true,
+      "meanings": {
+        "en": "shit, crap; shithead",
+        "fr": "merde",
+        "de": "Scheiße, Dreck; Scheißkerl, Drecksack, Dreckskerl, Arschloch, Armleuchter"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-25691",
+      "ru": "дерьмовый",
+      "en": "crappy",
+      "hint": "dyermOvyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "25691",
+      "translated": true,
+      "meanings": {
+        "en": "crappy",
+        "fr": "merdeux",
+        "es": "de mierda",
+        "de": "Scheiß-"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-51867",
+      "ru": "дерьмоед",
+      "en": "shit eater",
+      "hint": "dyermoyed",
+      "group": "other",
+      "source": "OpenRussian",
+      "sourceId": "51867",
+      "translated": true,
+      "meanings": {
+        "en": "shit eater"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-75440",
+      "ru": "долбанный",
+      "en": "damned, bloody, freaking, f***ing",
+      "hint": "dolbannyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "75440",
+      "translated": true,
+      "meanings": {
+        "en": "damned, bloody, freaking, f***ing",
+        "de": "verflucht, verdammt, scheiße (colloquial)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-53913",
+      "ru": "ебало",
+      "en": "beak / snout of an animal",
+      "hint": "yebAlo",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "53913",
+      "translated": true,
+      "meanings": {
+        "en": "beak / snout of an animal",
+        "de": "Schandmaul, Schandschnauze, Kodderschnauze, Dreckschleuder; Schnauze, Visage"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-53914",
+      "ru": "ебальник",
+      "en": "mug (slang), gob (slang), trap (slang)",
+      "hint": "yebAlneek",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "53914",
+      "translated": true,
+      "meanings": {
+        "en": "mug (slang), gob (slang), trap (slang)",
+        "de": "Fresse (slang), Maul (slang)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60019",
+      "ru": "ебать",
+      "en": "to fuck, to screw, to shag (vulgar)",
+      "hint": "yebAt",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "60019",
+      "translated": true,
+      "meanings": {
+        "en": "to fuck, to screw, to shag (vulgar)",
+        "fr": "baiser; foutre; enculer; fourrer; niquer; enconner",
+        "es": "joder; follar; chingar; coger; culear; jalar",
+        "de": "ficken (vulgär)",
+        "pt": "foder; trepar; comer; montar; pinar; transar"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export",
+        "pt": "WikDict / Wiktionary"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-2876",
+      "ru": "жопа",
+      "en": "ass",
+      "hint": "zhOpa",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "6486",
+      "translated": true,
+      "meanings": {
+        "en": "ass",
+        "de": "Arsch, Arschloch, Hintern, Scheißkerl; Ausdruck des Missfallens bei Unerfreulichem / Ärgerlichem, vergleichbar mit dem deutschen \"Scheiße\"; Balg, Gör, Lauser (scherzhaft zu Kindern)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-52187",
+      "ru": "жопорожец",
+      "en": "ass face; (facetious) Zaporozhets, car of the Zaporozhye Automobile Plant",
+      "hint": "zhoporOzhyets",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "52187",
+      "translated": true,
+      "meanings": {
+        "en": "ass face; (facetious) Zaporozhets, car of the Zaporozhye Automobile Plant",
+        "de": "Arschgesicht; Pkw des Automobilwerks Saporoschje"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-52186",
+      "ru": "жопошник",
+      "en": "scumbag, good-for-nothing, loafer, loser",
+      "hint": "zhOposhneek",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "52186",
+      "translated": true,
+      "meanings": {
+        "en": "scumbag, good-for-nothing, loafer, loser",
+        "de": "Faulenzer, Tunichtgut, Taugenichts, Arschloch"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-2312",
+      "ru": "задница",
+      "en": "butt, buttock, arse, ass",
+      "hint": "zAdneetsa",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "5211",
+      "translated": true,
+      "meanings": {
+        "en": "butt, buttock, arse, ass",
+        "fr": "cul",
+        "es": "culo",
+        "de": "Hintern, Arsch, Po"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-91518",
+      "ru": "какого чёрта",
+      "en": "what the fuck",
+      "hint": "kakogo chYOrta",
+      "group": "expression",
+      "source": "OpenRussian",
+      "sourceId": "91518",
+      "translated": true,
+      "meanings": {
+        "en": "what the fuck",
+        "de": "was zum Teufel"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-68761",
+      "ru": "клятый",
+      "en": "cursed, damned, accursed; damn, bloody, confounded",
+      "hint": "klYAtyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "68761",
+      "translated": true,
+      "meanings": {
+        "en": "cursed, damned, accursed; damn, bloody, confounded",
+        "de": "verflucht, verwünscht; verflucht, verflixt, verdammt"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-16209",
+      "ru": "курва",
+      "en": "whore, hooker; fanny (bitch), ass",
+      "hint": "kOOrva",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "16209",
+      "translated": true,
+      "meanings": {
+        "en": "whore, hooker; fanny (bitch), ass",
+        "de": "Hure, Nutte"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-53281",
+      "ru": "курвец",
+      "en": "whoreson, bastard, stinker, sod",
+      "hint": "koorvYEts",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "53281",
+      "translated": true,
+      "meanings": {
+        "en": "whoreson, bastard, stinker, sod",
+        "de": "Hurensohn, Aas, Bastard, Scheißkerl"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60649",
+      "ru": "мудак",
+      "en": "Asshole",
+      "hint": "moodAk",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "60649",
+      "translated": true,
+      "meanings": {
+        "en": "Asshole",
+        "fr": "cave; connard; couillon",
+        "de": "Arschloch"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59514",
+      "ru": "нассать",
+      "en": "to piss",
+      "hint": "nassAt",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59514",
+      "translated": true,
+      "meanings": {
+        "en": "to piss",
+        "de": "urinieren, pissen, pinkeln; keine Bedeutung beimessen, auf etwas pfeifen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-21618",
+      "ru": "ниггер",
+      "en": "Nigger, black person",
+      "hint": "nEEggyer",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59257",
+      "translated": true,
+      "meanings": {
+        "en": "Nigger, black person",
+        "de": "Nigger, Neger, Schwarzer"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59510",
+      "ru": "обоссаться",
+      "en": "to wet oneself, to pee one's pants, to piss oneself",
+      "hint": "obossAtsya",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59510",
+      "translated": true,
+      "meanings": {
+        "en": "to wet oneself, to pee one's pants, to piss oneself",
+        "de": "sich einnässen, sich in die Hose machen, sich bepissen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-52444",
+      "ru": "отыметь",
+      "en": "To fuck",
+      "hint": "otymYEt",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "52444",
+      "translated": true,
+      "meanings": {
+        "en": "To fuck",
+        "de": "bumsen, ficken, vögeln; auf den Geist gehen, nerven"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59490",
+      "ru": "охуенный",
+      "en": "Awesome, freaking awesome, fucking awesome",
+      "hint": "okhOOyennyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "59490",
+      "translated": true,
+      "meanings": {
+        "en": "Awesome, freaking awesome, fucking awesome",
+        "de": "affengeil, megacool, toll"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-12155",
+      "ru": "падла",
+      "en": "vile person, asshole, ass, carrion, bastard, scoundrel, bitch, motherfucker",
+      "hint": "pAdla",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "33044",
+      "translated": true,
+      "meanings": {
+        "en": "vile person, asshole, ass, carrion, bastard, scoundrel, bitch, motherfucker",
+        "de": "niederträchtige Person, Aas, Arsch, Bastard, Lump, Luder, Mistkerl, Schlampe, Flittchen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-11229",
+      "ru": "падло",
+      "en": "vile person, asshole, ass, carrion, bastard, scoundrel, bitch, motherfucker",
+      "hint": "pAdlo",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "11229",
+      "translated": true,
+      "meanings": {
+        "en": "vile person, asshole, ass, carrion, bastard, scoundrel, bitch, motherfucker",
+        "de": "niederträchtige Person, Aas, Arsch, Bastard, Lump, Luder, Mistkerl, Schlampe, Flittchen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59913",
+      "ru": "пизда",
+      "en": "cunt, pussy (vulgar)",
+      "hint": "peezdA",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59913",
+      "translated": true,
+      "meanings": {
+        "en": "cunt, pussy (vulgar)",
+        "fr": "con; chatte; moule; minou; foufoune; plotte",
+        "de": "Fotze, Muschi, Möse (vulgär)",
+        "pt": "boceta; cona; borboleta; buceta; aranha; bacalhau; greta; mona; racha"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export",
+        "pt": "WikDict / Wiktionary"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-34049",
+      "ru": "пиздеть",
+      "en": "to lie, to bullshit, to talk nonsense, to spout bullshit",
+      "hint": "peezdYEt",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59905",
+      "translated": true,
+      "meanings": {
+        "en": "to lie, to bullshit, to talk nonsense, to spout bullshit",
+        "de": "lügen, blödes Zeug reden, Scheiße labern"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-91786",
+      "ru": "пиздец",
+      "en": "shit, fuck, damn, bloody hell; huge amount of anything, shitload, fuckload; clusterfuck, fucking disaster, fucked, screwed, over (and done)",
+      "hint": "peezdYEts",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "91786",
+      "translated": true,
+      "meanings": {
+        "en": "shit, fuck, damn, bloody hell; huge amount of anything, shitload, fuckload; clusterfuck, fucking disaster, fucked, screwed, over (and done)",
+        "de": "Scheiße, verdammt; scheiß viel, verdammt viel, ein Haufen, eine Menge; Scheiß-Situation, am Arsch, Aus/Ende, erledigt, gefickt"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-91053",
+      "ru": "подъёб",
+      "en": "teasing; caustic remarks, banter, provocation",
+      "hint": "podYOb",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "91053",
+      "translated": true,
+      "meanings": {
+        "en": "teasing; caustic remarks, banter, provocation",
+        "de": "Hänselei, Frotzelei; Stichelei, Provokation"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-91054",
+      "ru": "подъёбка",
+      "en": "teasing; caustic remarks, banter, provocation",
+      "hint": "podYObka",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "91054",
+      "translated": true,
+      "meanings": {
+        "en": "teasing; caustic remarks, banter, provocation",
+        "de": "Hänselei, Stichelei, Provokation"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-17509",
+      "ru": "пропадом",
+      "en": "to hell with it; damn it; go to hell",
+      "hint": "prOpadom",
+      "group": "other",
+      "source": "OpenRussian",
+      "sourceId": "17509",
+      "translated": true,
+      "meanings": {
+        "de": "zum Teufel, weg damit",
+        "en": "to hell with it; damn it; go to hell"
+      },
+      "meaningSources": {
+        "de": "OpenRussian export",
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-90558",
+      "ru": "просрать",
+      "en": "to waste/to blow it, to fuck up",
+      "hint": "prosrAt",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "90558",
+      "translated": true,
+      "meanings": {
+        "en": "to waste/to blow it, to fuck up",
+        "de": "zerstören"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-1086",
+      "ru": "сволочь",
+      "en": "Bastard scum or swine",
+      "hint": "svOloch",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "2467",
+      "translated": true,
+      "meanings": {
+        "en": "Bastard scum or swine",
+        "de": "Gesindel, Bagage, Pack; Lump, Miststück"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-33984",
+      "ru": "сволочь",
+      "en": "riff-raff, scum, swine",
+      "hint": "svolOch",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "58522",
+      "translated": true,
+      "meanings": {
+        "en": "riff-raff, scum, swine",
+        "de": "ausziehen, herunterziehen; wegschleppen, klauen, stehlen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-57445",
+      "ru": "сральник",
+      "en": "ass, arse, anus, shithole (dirty place/toilet), trap (vulgar for mouth)",
+      "hint": "srAlneek",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "57445",
+      "translated": true,
+      "meanings": {
+        "en": "ass, arse, anus, shithole (dirty place/toilet), trap (vulgar for mouth)",
+        "de": "Arsch, Anus, Scheißloch (dirty place/toilet), Maul (vulgar for mouth)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-90772",
+      "ru": "срать",
+      "en": "to shit",
+      "hint": "srat",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "90772",
+      "translated": true,
+      "meanings": {
+        "en": "to shit",
+        "de": "scheißen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-53934",
+      "ru": "ссака",
+      "en": "pee, piss, urination",
+      "hint": "ssAka",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "53934",
+      "translated": true,
+      "meanings": {
+        "en": "pee, piss, urination",
+        "de": "Pipi, Pinkeln, Urin"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59511",
+      "ru": "ссаки",
+      "en": "urine, pee, piss (colloquial)",
+      "hint": "ssAkee",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59511",
+      "translated": true,
+      "meanings": {
+        "en": "urine, pee, piss (colloquial)",
+        "de": "Urin, Pipi, Pinkel (umgangssprachlich)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-33665",
+      "ru": "ссать",
+      "en": "to pee piss",
+      "hint": "ssat",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "53935",
+      "translated": true,
+      "meanings": {
+        "en": "to pee piss",
+        "fr": "pisser; faire pipi; brouiller; faire pleurer le gosse; faire pleurer le petit; faire siffler la mésange; se chier dessus; se pisser dessus",
+        "es": "mear",
+        "de": "uriniren, pissen, schiffen, pinkeln"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59508",
+      "ru": "ссаться",
+      "en": "to pee yourself",
+      "hint": "ssAtsya",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59508",
+      "translated": true,
+      "meanings": {
+        "en": "to pee yourself",
+        "de": "pissen, pinkeln, schiffen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60022",
+      "ru": "ссыкуха",
+      "en": "pipsqueak, brat, little squirt (vulgar)",
+      "hint": "ssykOOkha",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "60022",
+      "translated": true,
+      "meanings": {
+        "en": "pipsqueak, brat, little squirt (vulgar)",
+        "de": "Rotzgöre, Göre, Rotznase"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-4298",
+      "ru": "стерва",
+      "en": "bitch; stinker",
+      "hint": "stYErva",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "9940",
+      "translated": true,
+      "meanings": {
+        "en": "bitch; stinker",
+        "fr": "charogne; garce; peste; salope",
+        "de": "Luder, Schlampe; Aas, Kadaver"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-21807",
+      "ru": "стервец",
+      "en": "bastard, scoundrel, jerk, rotter, son of a bitch",
+      "hint": "styervYEts",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "21807",
+      "translated": true,
+      "meanings": {
+        "en": "bastard, scoundrel, jerk, rotter, son of a bitch",
+        "de": "Schurke, Mistkerl, Drecksack"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-2804",
+      "ru": "сука",
+      "en": "bitch",
+      "hint": "sOOka",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "6342",
+      "translated": true,
+      "meanings": {
+        "en": "bitch",
+        "fr": "chienne",
+        "es": "perra",
+        "de": "Hündin; Schlampe, Luder, Miststück; Mistkerl, Hurensohn, Schweinehund, Schurke; Informant, Verräter"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-35484",
+      "ru": "сукин",
+      "en": "of a bitch; bitch's; damned; of a bitch (female dog); belonging to the bitch",
+      "hint": "sOOkeen",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "8732",
+      "translated": true,
+      "meanings": {
+        "de": "Hunde-; Schweine-",
+        "en": "of a bitch; bitch's; damned; of a bitch (female dog); belonging to the bitch"
+      },
+      "meaningSources": {
+        "de": "OpenRussian export",
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-9112",
+      "ru": "сучий",
+      "en": "damned, cursed, bloody, hellish",
+      "hint": "sOOcheey",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "9112",
+      "translated": true,
+      "meanings": {
+        "en": "damned, cursed, bloody, hellish",
+        "de": "verflucht, verdammt"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-33453",
+      "ru": "сучка",
+      "en": "(little) bitch",
+      "hint": "sOOchka",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "33453",
+      "translated": true,
+      "meanings": {
+        "en": "(little) bitch",
+        "de": "Tussi, Tusse, Flittchen, notgeiles Weibsstück, Luder"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59517",
+      "ru": "сцать",
+      "en": "to pee, to piss",
+      "hint": "stsat",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59517",
+      "translated": true,
+      "meanings": {
+        "en": "to pee, to piss",
+        "de": "pinkeln, pissen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-7372",
+      "ru": "трах",
+      "en": "bang / boom (verbal percussive sound); fuck",
+      "hint": "trakh",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "18199",
+      "translated": true,
+      "meanings": {
+        "en": "bang / boom (verbal percussive sound); fuck",
+        "de": "Knall, Krach, Dröhn, Donner; Bumsen; Ausruf d. Überraschung (etwa wie: ach du Scheiße!, fuck!)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72237",
+      "ru": "трахавший",
+      "en": "fucking, having fucked, that fucked",
+      "hint": "trAkhavsheey",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72237",
+      "translated": true,
+      "meanings": {
+        "en": "fucking, having fucked, that fucked",
+        "de": "fickend, gefickt habend"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72230",
+      "ru": "трахавшийся",
+      "en": "fucked, having fucked",
+      "hint": "trAkhavsheeysya",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72230",
+      "translated": true,
+      "meanings": {
+        "en": "fucked, having fucked",
+        "de": "gefickt, der gefickt hat"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72238",
+      "ru": "трахаемый",
+      "en": "fucked, being fucked, screwed, being screwed",
+      "hint": "trAkhayemyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72238",
+      "translated": true,
+      "meanings": {
+        "en": "fucked, being fucked, screwed, being screwed",
+        "de": "gefickt, gefickt werdend, gevögelt, gevögelt werdend"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72239",
+      "ru": "траханный",
+      "en": "fucked (vulgar), fucking (vulgar, as intensifier), damned (colloquial, as intensifier)",
+      "hint": "trakhannyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72239",
+      "translated": true,
+      "meanings": {
+        "en": "fucked (vulgar), fucking (vulgar, as intensifier), damned (colloquial, as intensifier)",
+        "de": "gefickt (vulgär), verfickt (vulgär, als Verstärkung), verdammt (umgangssprachlich, als Verstärkung)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-27336",
+      "ru": "трахать",
+      "en": "to bang, to knock; to fuck, to bonk, to screw",
+      "hint": "trAkhat",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "20684",
+      "translated": true,
+      "meanings": {
+        "en": "to bang, to knock; to fuck, to bonk, to screw",
+        "fr": "avec",
+        "de": "knallen, krachen, niederkrachen; bumsen, ficken, vögeln"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72236",
+      "ru": "трахающий",
+      "en": "fucking (vulgar, performing sexual intercourse)",
+      "hint": "trAkhayushcheey",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72236",
+      "translated": true,
+      "meanings": {
+        "en": "fucking (vulgar, performing sexual intercourse)",
+        "de": "fickend (vulgär, Geschlechtsverkehr vollziehend)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-72229",
+      "ru": "трахающийся",
+      "en": "fucking, having sex",
+      "hint": "trAkhayushcheeysya",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "72229",
+      "translated": true,
+      "meanings": {
+        "en": "fucking, having sex",
+        "de": "fickend, sich vögelnd, Sex habend"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-68919",
+      "ru": "трахнувший",
+      "en": "who fucked, having fucked; who hit, having hit",
+      "hint": "trAkhnoovsheey",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "68919",
+      "translated": true,
+      "meanings": {
+        "en": "who fucked, having fucked; who hit, having hit",
+        "de": "der gefickt hat, gefickt habend; der geschlagen hat, geschlagen habend"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-68920",
+      "ru": "трахнутый",
+      "en": "crazy, insane, mad, messed up, fucked up; fucked, screwed",
+      "hint": "trAkhnootyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "68920",
+      "translated": true,
+      "meanings": {
+        "en": "crazy, insane, mad, messed up, fucked up; fucked, screwed",
+        "de": "verrückt, durchgeknallt, bekloppt, bescheuert; gefickt, gevögelt"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-25875",
+      "ru": "трахнуть",
+      "en": "crash, bang; fuck, bonk, screw",
+      "hint": "trAkhnoot",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "14790",
+      "translated": true,
+      "meanings": {
+        "en": "crash, bang; fuck, bonk, screw",
+        "de": "knallen, krachen, niederkrachen; bumsen, ficken, vögeln"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-5050",
+      "ru": "ублюдок",
+      "en": "cur, mongrel, bastard",
+      "hint": "ooblYUdok",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "11845",
+      "translated": true,
+      "meanings": {
+        "en": "cur, mongrel, bastard",
+        "fr": "avorton; dégénéré; nabot; bâtard",
+        "de": "Hurensohn, Vollidiot"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59509",
+      "ru": "уссаться",
+      "en": "to wet oneself, to pee oneself, to piss oneself",
+      "hint": "oossAtsya",
+      "group": "verb",
+      "source": "OpenRussian",
+      "sourceId": "59509",
+      "translated": true,
+      "meanings": {
+        "en": "to wet oneself, to pee oneself, to piss oneself",
+        "de": "sich einnässen, sich in die Hose machen"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60057",
+      "ru": "фак",
+      "en": "faculty (sl.); the finger (gesture); fuck!",
+      "hint": "fak",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "60057",
+      "translated": true,
+      "meanings": {
+        "en": "faculty (sl.); the finger (gesture); fuck!",
+        "de": "Fakultät (sl.); Stinkefinger Geste; Fuck!"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59424",
+      "ru": "хач",
+      "en": "wog (derogatory slur for a person from the Caucasus or Central Asia)",
+      "hint": "khach",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59424",
+      "translated": true,
+      "meanings": {
+        "en": "wog (derogatory slur for a person from the Caucasus or Central Asia)",
+        "de": "Kanake (Schimpfwort, abfällig für eine Person aus dem Kaukasus oder Zentralasien)"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-10338",
+      "ru": "хер",
+      "en": "dick; cock; prick; dickhead; jerk; idiot; fuck; shit; hell; nobody; cross-shaped mark",
+      "hint": "khyer",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "10338",
+      "translated": true,
+      "meanings": {
+        "en": "dick; cock; prick; dickhead; jerk; idiot; fuck; shit; hell; nobody; cross-shaped mark",
+        "fr": "X; croix; bite; queue",
+        "de": "Schwanz, Penis; Dödel, Pfeife, Trottel; Scheiß, Dreck; niemand"
+      },
+      "meaningSources": {
+        "en": "OpenRussian live, checked 2026-10-09",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-21476",
+      "ru": "херня",
+      "en": "crap, bullshit, shit",
+      "hint": "khyernYA",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "57724",
+      "translated": true,
+      "meanings": {
+        "en": "crap, bullshit, shit",
+        "de": "Scheißzeug, Scheißdreck, Mistzeug, Schietkram"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-57721",
+      "ru": "херов",
+      "en": "lousy; crappy; shitty",
+      "hint": "khyerov",
+      "group": "other",
+      "source": "OpenRussian",
+      "sourceId": "57721",
+      "translated": true,
+      "meanings": {
+        "en": "lousy; crappy; shitty"
+      },
+      "meaningSources": {
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-21475",
+      "ru": "херовина",
+      "en": "bullshit, ; nonsense",
+      "hint": "khyerOveena",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "57722",
+      "translated": true,
+      "meanings": {
+        "en": "bullshit, ; nonsense",
+        "de": "Scheiße, Mist, Scheißding, Mistding; Schwachsinn, Dreckszeugs"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-36390",
+      "ru": "хреновый",
+      "en": "(relational) horseradish; shitty / lousy",
+      "hint": "khryenOvyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "13823",
+      "translated": true,
+      "meanings": {
+        "en": "(relational) horseradish; shitty / lousy",
+        "fr": "merdique; minable; nul",
+        "de": "Meerrettich-; schlecht, minderwertig, grottig"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-21268",
+      "ru": "хрень",
+      "en": "Crap",
+      "hint": "khryen",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "51094",
+      "translated": true,
+      "meanings": {
+        "en": "Crap",
+        "de": "Kleinkram, Zeug"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-57726",
+      "ru": "хуй",
+      "en": "dick, cock, prick, wiener; fuck / shit (as a general slang term), fucking; nobody",
+      "hint": "khooy",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "57726",
+      "translated": true,
+      "meanings": {
+        "en": "dick, cock, prick, wiener; fuck / shit (as a general slang term), fucking; nobody",
+        "fr": "bite; queue; paf; pine; vit; zob",
+        "es": "polla; pija; pico; pichula; verga; picha",
+        "de": "Schwanz, Pimmel, Penis; Dödel, Pfeife, Trottel; Scheiß, Dreck; niemand",
+        "pt": "caralho; pau; pinto; cacete; vara; pica"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "OpenRussian export",
+        "pt": "WikDict / Wiktionary"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-45636",
+      "ru": "хуй",
+      "en": "cock; dick; prick; shaft; shlong; wang",
+      "hint": "khooy",
+      "group": "other",
+      "source": "OpenRussian",
+      "meanings": {
+        "en": "cock; dick; prick; shaft; shlong; wang",
+        "fr": "bite; queue; paf; pine; vit; zob",
+        "es": "polla; pija; pico; pichula; verga; picha",
+        "de": "Schwanz; Nille; Rute; Glied; Zipfel; Pfeife",
+        "pt": "caralho; pau; pinto; cacete; vara; pica"
+      },
+      "meaningSources": {
+        "en": "WikDict / Wiktionary",
+        "fr": "WikDict / Wiktionary",
+        "es": "WikDict / Wiktionary",
+        "de": "WikDict / Wiktionary",
+        "pt": "WikDict / Wiktionary"
+      },
+      "translated": true,
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-54083",
+      "ru": "черножопый",
+      "en": "black-assed; wog-; towelhead-",
+      "hint": "chyernozhOpyy",
+      "group": "adjective",
+      "source": "OpenRussian",
+      "sourceId": "54083",
+      "translated": true,
+      "meanings": {
+        "de": "schwarzärschig, mit schwarzem Arsch, scheißkaukasisch, auf einen Scheißsüdländer bezogen",
+        "en": "black-assed; wog-; towelhead-"
+      },
+      "meaningSources": {
+        "de": "OpenRussian export",
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-59726",
+      "ru": "черножопый",
+      "en": "wog; black-arse; dirty Caucasian; nigger",
+      "hint": "chyernozhOpyy",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "59726",
+      "translated": true,
+      "meanings": {
+        "de": "Schwarzärschiger, Afrikanerarsch, Nigger, Scheißkaukasier, Scheißsüdländer",
+        "en": "wog; black-arse; dirty Caucasian; nigger"
+      },
+      "meaningSources": {
+        "de": "OpenRussian export",
+        "en": "OpenRussian live, checked 2026-10-09"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-open-60185",
+      "ru": "Чёрт побери!",
+      "en": "damn",
+      "hint": "chYOrt pobyeree!",
+      "group": "expression",
+      "source": "OpenRussian",
+      "sourceId": "60185",
+      "translated": true,
+      "meanings": {
+        "en": "damn",
+        "de": "Zum Teufel!; Hol's der Teufel!"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    },
+    {
+      "id": "dict-5255",
+      "ru": "шлюха",
+      "en": "whore, bitch",
+      "hint": "shlYUkha",
+      "group": "noun",
+      "source": "OpenRussian",
+      "sourceId": "12393",
+      "translated": true,
+      "meanings": {
+        "en": "whore, bitch",
+        "de": "Nutte, Hure"
+      },
+      "meaningSources": {
+        "en": "OpenRussian export",
+        "de": "OpenRussian export"
+      },
+      "translationStatus": "source"
+    }
+  ],
+  "neutralMeanings": [
+    {
+      "id": "dict-2166",
+      "ru": "блин",
+      "previous": "pancake; damn",
+      "en": "pancake"
+    },
+    {
+      "id": "dict-1487",
+      "ru": "гад",
+      "previous": "vile person (bastard), monster; loathsome critter (crawler, reptile)",
+      "en": "reptile; loathsome creature"
+    },
+    {
+      "id": "dict-open-11942",
+      "ru": "гадина",
+      "previous": "vile person (bastard), monster; loathsome critter (crawler, reptile)",
+      "en": "loathsome creature"
+    },
+    {
+      "id": "dict-8597",
+      "ru": "дребедень",
+      "previous": "crap/nonsense/rubbish",
+      "en": "nonsense; rubbish"
+    },
+    {
+      "id": "dict-open-15524",
+      "ru": "дёр",
+      "previous": "tear (up); pull (off); fucking, screwing",
+      "en": "tearing; pulling off"
+    },
+    {
+      "id": "dict-open-90531",
+      "ru": "какавший",
+      "previous": "pooping, shitting, that has pooped, that has shat",
+      "en": "having pooped"
+    },
+    {
+      "id": "dict-open-90530",
+      "ru": "какающий",
+      "previous": "pooping, shitting",
+      "en": "pooping"
+    },
+    {
+      "id": "dict-1444",
+      "ru": "козёл",
+      "previous": "male-goat, billy-goat; Asshole",
+      "en": "male goat; billy goat"
+    },
+    {
+      "id": "dict-2313",
+      "ru": "мерзавец",
+      "previous": "bastard, scoundrel, asshole, creep; villain, ",
+      "en": "scoundrel; villain"
+    },
+    {
+      "id": "dict-open-27846",
+      "ru": "начхать",
+      "previous": "to not give a damn, to not care, to not give a hoot",
+      "en": "to not care"
+    },
+    {
+      "id": "dict-open-54674",
+      "ru": "описаться",
+      "previous": "to be misspelled; to pee, to piss",
+      "en": "to make a spelling mistake; to wet oneself"
+    },
+    {
+      "id": "dict-open-60187",
+      "ru": "Отвали!",
+      "previous": "get lost; buzz off; piss off; leave me alone",
+      "en": "leave me alone"
+    },
+    {
+      "id": "dict-21794",
+      "ru": "писать",
+      "previous": "to write, text; to paint; to pee, to piss",
+      "en": "to write; to paint"
+    },
+    {
+      "id": "dict-23626",
+      "ru": "писаться",
+      "previous": "to be spelled / written; to pee, to piss",
+      "en": "to be written or spelled"
+    },
+    {
+      "id": "dict-27493",
+      "ru": "пописать",
+      "previous": "to pee, to piss; to write for some time; to paint for some time",
+      "en": "to write or paint for a while; to pee"
+    },
+    {
+      "id": "dict-23646",
+      "ru": "проклинать",
+      "previous": "curse, damn",
+      "en": "to curse"
+    },
+    {
+      "id": "dict-26226",
+      "ru": "проклясть",
+      "previous": "curse, damn",
+      "en": "to curse"
+    },
+    {
+      "id": "dict-3369",
+      "ru": "урод",
+      "previous": "freak; monster; deformed person; ugly person; fright; jerk; bastard",
+      "en": "deformed or ugly person"
+    },
+    {
+      "id": "dict-12120",
+      "ru": "фигня",
+      "previous": "Issue, problem; Nonsense, rubbish; crap",
+      "en": "nonsense; rubbish"
+    },
+    {
+      "id": "dict-1140",
+      "ru": "хрен",
+      "previous": "horse-radish, horseradish, shit",
+      "en": "horseradish"
+    },
+    {
+      "id": "dict-447",
+      "ru": "чёрт",
+      "previous": "devil, deuce",
+      "en": "devil"
+    },
+    {
+      "id": "dict-5563",
+      "ru": "шип",
+      "previous": "thorn / spike; pin (tenon, dowel); fizzle; thorn sturgeon, bastard sturgeon",
+      "en": "thorn; spike; pin; thorn sturgeon"
+    }
+  ]
+}

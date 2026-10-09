@@ -1,25 +1,5 @@
 {
   "source": "en",
-  "languages": [
-    {
-      "language": "fr",
-      "translatedStrings": 109326,
-      "status": "machine-translated draft"
-    },
-    {
-      "language": "es",
-      "translatedStrings": 109326,
-      "status": "machine-translated draft"
-    },
-    {
-      "language": "de",
-      "translatedStrings": 109326,
-      "status": "machine-translated draft"
-    },
-    {
-      "language": "pt",
-      "translatedStrings": 109326,
-      "status": "machine-translated draft"
-    }
-  ]
+  "languages": [],
+  "referenceDictionaries": "English meanings only"
 }

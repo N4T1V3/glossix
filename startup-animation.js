@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const screen=document.querySelector('#app-startup');if(!screen)return;const icon=screen.querySelector('.startup-mark img');const b=icon.getBoundingClientRect();screen.style.transformOrigin=(b.x+b.width/2)+'px '+(b.y+b.height/2)+'px';});
