@@ -22,7 +22,7 @@ document.addEventListener('change',async e=>{
  if(e.target.dataset.activeLanguage){const code=e.target.dataset.activeLanguage,checked=e.target.checked;e.target.disabled=true;try{const p=await GlossixOnline.rpc('glossix_language_set',{p_language:code,p_active:checked});const panel=e.target.closest('.language-profile');if(panel)panel.outerHTML=languageProfilePanel(p);}catch(error){e.target.checked=!checked;const status=$('#language-status');if(status)status.textContent='Your change could not be saved. '+error.message;}finally{if(e.target.isConnected)e.target.disabled=false;}}
 });
 // Device profiles share a language selection, while their exercises remain independent.
-const languageSettingsBase=renderSettings;renderSettings=function(){languageSettingsBase();$('#view .workspace').insertAdjacentHTML('afterbegin',`<div class="setting"><h2>${esc(profileRoot().name)}’s learning languages</h2>${languageFlags(localLanguageProfile())}</div>`);};
+const languageSettingsBase=renderSettings;renderSettings=function(){languageSettingsBase();$('#view .workspace').insertAdjacentHTML('afterbegin',`<div class="setting"><h2 id="settings-learning-languages">Your learning languages</h2>${languageFlags(localLanguageProfile())}</div>`);};
 const languageAwardBase=awardOnline;awardOnline=function(activity,undo=false){if(!undo)recordLearningLanguage();if(activeLanguage==='it'){if(activity?.startsWith('scenario:')||activity?.startsWith('visual:')||activity?.startsWith('alphabet:'))activity=activity.replace(':',':it:');}languageAwardBase(activity,undo);};
 // Enrol a newly created online profile in the currently selected course.
 document.addEventListener('submit',e=>{if(e.target.id==='social-profile-form'){profileRoot().pendingLanguage=true;save();}});
