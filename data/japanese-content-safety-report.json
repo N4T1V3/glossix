@@ -1,0 +1,13 @@
+{
+  "language": "ja",
+  "input": 13562,
+  "published": 13523,
+  "omitted": 39,
+  "reasons": {
+    "English meaning": 22,
+    "Target-language term": 7,
+    "Source usage label": 3,
+    "Source usage metadata": 7
+  },
+  "policy": "Omit entries matching target-language terms, English profanity or offensive usage labels. Automated screening is conservative and is not a substitute for editorial review."
+}

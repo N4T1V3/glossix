@@ -1,0 +1,14 @@
+{
+  "language": "fr",
+  "input": 124611,
+  "published": 124234,
+  "omitted": 376,
+  "reasons": {
+    "English meaning": 302,
+    "Target-language term": 47,
+    "Source usage label": 8,
+    "Source usage metadata": 19
+  },
+  "policy": "Omit entries matching target-language terms, English profanity or offensive usage labels. Automated screening is conservative and is not a substitute for editorial review.",
+  "omittedWithoutPronunciation": 1
+}
