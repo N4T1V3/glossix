@@ -4,7 +4,7 @@ const {execFile}=require('node:child_process');
 ipcMain.handle('speech',async(_,payload)=>{
  if(!_.senderFrame||_.senderFrame!==_.sender.mainFrame||_.senderFrame.url.split('#')[0]!==require('node:url').pathToFileURL(path.join(__dirname,'index.html')).href)throw Error('Speech request is not allowed.');
  const text=String(payload?.text||'').trim(),language=payload?.language||'ru';
- if(!text||text.length>400||!['ru','it'].includes(language)||!(language==='ru'?/[а-яё]/i:/[a-zàèéìòù]/i).test(text))throw new Error('Choose a supported language word or phrase to hear.');
+ if(!text||text.length>400||!['ru','it','es','fr','de','zh','ko'].includes(language)||!(language==='ru'?/[а-яё]/i:language==='zh'?/[\p{Script=Han}]/u:language==='ko'?/[\p{Script=Hangul}]/u:/[a-zà-ÿœ]/i).test(text))throw new Error('Choose a supported language word or phrase to hear.');
  return require('./speech-engine.cjs').synthesize({text,language,slow:!!payload.slow},__dirname,process.resourcesPath);
 });
 // Retain the established profile directory so the rename preserves desktop progress.

@@ -8,7 +8,7 @@ async function renderSocial(){
   try{
     let p=await GlossixOnline.rpc('glossix_profile');
     if(serial!==socialSerial||!['friends','leaderboard'].includes(page)||GlossixOnline.user()?.id!==user.id)return;
-    if(p&&profileRoot().pendingLanguage){p=await GlossixOnline.rpc('glossix_language_set',{p_language:activeLanguage,p_active:true});delete profileRoot().pendingLanguage;save();}socialProfile=p;
+    if(p&&profileRoot().pendingLanguage){try{const synced=await GlossixOnline.rpc('glossix_language_set',{p_language:activeLanguage,p_active:true});if(serial!==socialSerial||GlossixOnline.user()?.id!==user.id)return;p=synced;delete profileRoot().pendingLanguage;save();}catch{ /* Optional language flags must not block friends or rankings. Retry on a later visit. */ }}socialProfile=p;
     if(!p){$('#social-content').innerHTML=profileForm(null);return;}
     if(page==='friends'){
       const rows=await GlossixOnline.rpc('glossix_friends_languages');if(serial!==socialSerial||page!=='friends'||GlossixOnline.user()?.id!==user.id)return;

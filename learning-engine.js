@@ -1,7 +1,7 @@
 (function(root){
  const DAY=86400000;
  const day=now=>new Date(now).toISOString().slice(0,10);
- const normalize=s=>String(s).normalize('NFC').replace(/\u0301/g,'').replace(/[’‘]/g,"'").toLowerCase().replace(/ё/g,'е').replace(/[.!?,]/g,'').trim().replace(/\s+/g,' ');
+ const normalize=s=>String(s).normalize('NFC').replace(/\u0301/g,'').replace(/[’‘]/g,"'").toLowerCase().replace(/ё/g,'е').replace(/[.!?,¿¡。！？，、；：]/g,'').trim().replace(/\s+/g,' ');
  function blank(){return {unlocked:0,items:{},points:'0',awards:{},daily:{},completedLessons:[]};}
  function level(points){const xp=BigInt(points||0),threshold=l=>100n*l*(l-1n)/2n;let lo=1n,hi=2n;while(threshold(hi)<=xp){lo=hi;hi*=2n;}while(hi-lo>1n){const m=(hi+lo)/2n;if(threshold(m)<=xp)lo=m;else hi=m;}return {level:lo.toString(),points:xp.toString(),into:(xp-threshold(lo)).toString(),needed:(100n*lo).toString(),remaining:(threshold(lo+1n)-xp).toString(),percent:Number((xp-threshold(lo))*10000n/(100n*lo))/100};}
  function stats(state,now){return state.daily[day(now)]||{attempts:0,correct:0,successIds:[],spacedIds:[],challenges:[]};}

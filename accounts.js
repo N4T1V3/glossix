@@ -23,7 +23,7 @@ document.addEventListener('submit',async e=>{
       if(!data.access_token)accountMode='signin';
     }else if(mode==='verify'){await GlossixOnline.verify(email,code);accountNotice='Email confirmed. You are signed in.';}
     else{await GlossixOnline.signIn(email,password);accountNotice='You are signed in.';}
-    if(page==='account')renderAccount();
+    if(GlossixOnline.user()){location.hash='home';if(page==='home')render();}else if(page==='account')renderAccount();
   }catch(err){if(page==='account'){accountMessage(err.message,true);if($('#account-password'))$('#account-password').value='';}}
   finally{accountBusy=false;if(page==='account'&&$('#account-submit'))$('#account-submit').disabled=false;}
 });
