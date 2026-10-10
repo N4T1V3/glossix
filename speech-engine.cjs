@@ -1,0 +1,9 @@
+const fs=require('node:fs'),path=require('node:path'),{execFile}=require('node:child_process');
+function run(exe,args,options){return new Promise((resolve,reject)=>execFile(exe,args,options,(error,stdout)=>error?reject(error):resolve(stdout)));}
+async function synthesize({text,language,slow},appDirectory,resourcesDirectory){
+ const bases=[path.join(resourcesDirectory||appDirectory,'app.asar.unpacked','third-party','espeak-ng'),path.join(appDirectory.replace(/app\.asar(?=[\\/]|$)/,'app.asar.unpacked'),'third-party','espeak-ng')];
+ for(const base of [...new Set(bases)]){if(!fs.existsSync(path.join(base,'espeak-ng.exe'))||!fs.existsSync(path.join(base,'espeak-ng-data',language+'_dict')))continue;try{const wav=await run(path.join(base,'espeak-ng.exe'),['--path='+base,'-v',language,'-s',slow?'105':'145','-b','1','--stdout','--',text],{cwd:base,env:{...process.env,ESPEAK_DATA_PATH:path.join(base,'espeak-ng-data')},windowsHide:true,encoding:'buffer',timeout:12000,maxBuffer:8000000});if(wav.length>44&&wav.subarray(0,4).toString()==='RIFF')return wav.toString('base64');}catch{}}
+ if(process.platform==='win32'){try{const wav=await run(path.join(process.env.SystemRoot||'C:\\Windows','System32','WindowsPowerShell','v1.0','powershell.exe'),['-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',path.join(appDirectory.replace(/app\.asar(?=[\\/]|$)/,'app.asar.unpacked'),'system-speech.ps1'),'-TextBase64',Buffer.from(text,'utf8').toString('base64'),'-Language',language,'-Rate',slow?'-3':'-1'],{windowsHide:true,encoding:'utf8',timeout:15000,maxBuffer:12000000});const data=Buffer.from(wav.trim(),'base64');if(data.length>44&&data.subarray(0,4).toString()==='RIFF')return data.toString('base64');}catch{}}
+ throw Error('Pronunciation is unavailable. Reinstall the latest Glossix installer to restore its offline voice, or enable a Russian or Italian Windows speech voice.');
+}
+module.exports={synthesize};

@@ -5,11 +5,7 @@ ipcMain.handle('speech',async(_,payload)=>{
  if(!_.senderFrame||_.senderFrame!==_.sender.mainFrame||_.senderFrame.url.split('#')[0]!==require('node:url').pathToFileURL(path.join(__dirname,'index.html')).href)throw Error('Speech request is not allowed.');
  const text=String(payload?.text||'').trim(),language=payload?.language||'ru';
  if(!text||text.length>400||!['ru','it'].includes(language)||!(language==='ru'?/[а-яё]/i:/[a-zàèéìòù]/i).test(text))throw new Error('Choose a supported language word or phrase to hear.');
- const base=path.join(__dirname.endsWith('app.asar')?path.join(process.resourcesPath,'app.asar.unpacked'):__dirname,'third-party','espeak-ng');
- return new Promise((resolve,reject)=>execFile(path.join(base,'espeak-ng.exe'),['--path='+base,'-v',language,'-s',payload.slow?'105':'145','-b','1','--stdout',text],{windowsHide:true,encoding:'buffer',timeout:12000,maxBuffer:8000000},(error,stdout)=>{
-   if(error||stdout?.subarray(0,4).toString()!=='RIFF')return reject(new Error('Offline speech could not start. Check the bundled speech engine files, or enable a system voice for your language.'));
-   resolve(stdout.toString('base64'));
- }));
+ return require('./speech-engine.cjs').synthesize({text,language,slow:!!payload.slow},__dirname,process.resourcesPath);
 });
 // Retain the established profile directory so the rename preserves desktop progress.
 app.setPath('userData',path.join(app.getPath('appData'),'lingua-studio'));
