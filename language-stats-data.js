@@ -1,5 +1,5 @@
 window.GLOSSIX_LANGUAGE_STATS={
-  "updated": "10 October 2026",
+  "updated": "11 October 2026",
   "languages": [
     {
       "code": "ru",
@@ -60,21 +60,6 @@ window.GLOSSIX_LANGUAGE_STATS={
       "preview": "french-course-preview.html"
     },
     {
-      "code": "zh",
-      "name": "Mandarin Chinese",
-      "lessons": 280,
-      "targets": 1680,
-      "scenes": 50,
-      "conversations": 62,
-      "dictionary": 9625,
-      "difficulty": [
-        1,
-        5
-      ],
-      "status": "App preview; SQL deployment pending",
-      "preview": "chinese-course-preview.html"
-    },
-    {
       "code": "de",
       "name": "German",
       "lessons": 297,
@@ -90,109 +75,36 @@ window.GLOSSIX_LANGUAGE_STATS={
       "preview": "german-course-preview.html"
     },
     {
-      "code": "ko",
-      "name": "Korean",
-      "lessons": 288,
-      "targets": 1728,
+      "code": "pt-br",
+      "name": "Brazilian Portuguese",
+      "lessons": 272,
+      "targets": 1632,
       "scenes": 50,
       "conversations": 62,
-      "dictionary": 34098,
+      "dictionary": 0,
       "difficulty": [
         1,
         5
       ],
-      "status": "App preview; SQL deployment pending",
-      "preview": "korean-course-preview.html"
-    },
-    {
-      "code": "ar",
-      "name": "Modern Standard Arabic",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built"
-    },
-    {
-      "code": "ar-eg",
-      "name": "Egyptian Arabic",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built"
-    },
-    {
-      "code": "ar-levant",
-      "name": "Levantine Arabic",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built"
-    },
-    {
-      "code": "ar-gulf",
-      "name": "Gulf Arabic",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built"
-    },
-    {
-      "code": "pt-br",
-      "name": "Brazilian Portuguese",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built",
-      "dictionaryNote": "Shared Portuguese reference: 12,745 entries; varieties not yet localised"
+      "status": "Integrated course; language review pending",
+      "dictionaryNote": "Shared Portuguese resource (12,745 headwords)",
+      "preview": "pt-br-course-preview.html"
     },
     {
       "code": "pt-pt",
       "name": "European Portuguese",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
+      "lessons": 272,
+      "targets": 1632,
+      "scenes": 50,
+      "conversations": 62,
       "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built",
-      "dictionaryNote": "Shared Portuguese reference: 12,745 entries; varieties not yet localised"
-    },
-    {
-      "code": "ja",
-      "name": "Japanese",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 13523,
-      "difficulty": null,
-      "status": "Course not built"
-    },
-    {
-      "code": "hi",
-      "name": "Hindi",
-      "lessons": 0,
-      "targets": 0,
-      "scenes": 0,
-      "conversations": 0,
-      "dictionary": 0,
-      "difficulty": null,
-      "status": "Course not built"
+      "difficulty": [
+        1,
+        5
+      ],
+      "status": "Integrated course; language review pending",
+      "dictionaryNote": "Shared Portuguese resource (12,745 headwords)",
+      "preview": "pt-pt-course-preview.html"
     }
   ],
   "sharedPortugueseDictionary": 12745

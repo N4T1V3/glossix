@@ -23,6 +23,10 @@ GlossixLanguages.register('fr',{
 
 GlossixLanguages.register('de',{course:COURSES.de,curriculum:GERMAN_CURRICULUM,visuals:GERMAN_VISUALS,dictionary:()=>window.GERMAN_DICTIONARY||[],dictionaryPath:'data/german-dictionary.js?v=0.2.53.40',alphabet:{icon:'Ä',title:'German letters',description:'Learn German letter names, umlauts, ß and sounds.'}});
 
-GlossixLanguages.register('zh',{course:COURSES.zh,curriculum:CHINESE_CURRICULUM,visuals:CHINESE_VISUALS,dictionary:()=>window.CHINESE_DICTIONARY||[],dictionaryPath:'data/chinese-dictionary.js?v=0.2.53.40',alphabet:{icon:'字',title:'Characters & pinyin',description:'Read Simplified Chinese characters and practise tones with pinyin.'}});
 
-GlossixLanguages.register('ko',{course:COURSES.ko,curriculum:KOREAN_CURRICULUM,visuals:KOREAN_VISUALS,dictionary:()=>window.KOREAN_DICTIONARY||[],dictionaryPath:'data/korean-dictionary.js?v=0.2.53.40',alphabet:{icon:'한',title:'Hangul & sounds',description:'Read Korean consonants, vowels and syllable blocks.'}});
+
+
+
+GlossixLanguages.register("pt-br",{course:COURSES["pt-br"],curriculum:PORTUGUESE_BR_CURRICULUM,visuals:PORTUGUESE_BR_VISUALS,dictionary:()=> (window.PORTUGUESE_DICTIONARY||[]).map(w=>({...w,id:"pt-br-"+w.id,language:"pt-br"})),dictionaryPath:"data/portuguese-dictionary.js?v=0.2.53.43",alphabet:{icon:"Ã",title:"Portuguese letters",description:"Learn the alphabet, accents and nasal vowels."}});
+
+GlossixLanguages.register("pt-pt",{course:COURSES["pt-pt"],curriculum:PORTUGUESE_PT_CURRICULUM,visuals:PORTUGUESE_PT_VISUALS,dictionary:()=> (window.PORTUGUESE_DICTIONARY||[]).map(w=>({...w,id:"pt-pt-"+w.id,language:"pt-pt"})),dictionaryPath:"data/portuguese-dictionary.js?v=0.2.53.43",alphabet:{icon:"Ã",title:"Portuguese letters",description:"Learn the alphabet, accents and nasal vowels."}});

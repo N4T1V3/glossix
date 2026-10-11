@@ -41,7 +41,7 @@ New imports omit entries flagged by target-language profanity, English meanings 
 
 ## Remaining requested courses
 
-Japanese, Hindi, Modern Standard Arabic, Egyptian Arabic, Levantine Arabic, Gulf Arabic, Brazilian Portuguese and European Portuguese are not built and are unavailable in the course selector. Their identities remain distinct. They need independent authored courses, grammar/script teaching, practice assets, pronunciation, migrations and integration checks.
+Brazilian Portuguese and European Portuguese are now integrated courses. Japanese, Hindi and the Arabic varieties were removed from the plan at the user’s request.
 
 ## Review pages
 
@@ -60,3 +60,15 @@ The new combined SUPABASE-NEW-LANGUAGES-UPDATE.sql includes Korean. It passed lo
 Dictionary collection menus now hide empty categories; word types reflect the selected collection without disappearing just because a search has no matches. Known entries lacking pronunciation are excluded from dictionary/practice results. One French and one German reference entry were removed. Missing IPA alone is not treated as missing speech, and temporary playback failures do not erase content.
 
 Korean teaching references: National Institute of Korean Language https://korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=310153 ; Basic Korean Dictionary https://krdict.korean.go.kr/eng/mainAction?flag=PC ; English Wiktionary structured reference https://kaikki.org/dictionary/Korean/ . Examples were independently authored.
+
+## Portuguese addition — 11 October 2026
+
+Brazilian Portuguese and European Portuguese are separate selectable courses, without a preview suffix. Each now includes 272 lessons, 1,632 learning targets, 50 scenes and 62 conversations, matching the Russian/Italian lesson counts. Internal difficulty spans 1–5, including 24 grammar workshops covering object pronouns, past narration, future and conditional forms, subjunctive conditions, the personal infinitive, passive/result constructions and relative clauses. Each has separate local and server progress keys, regional vocabulary and an appropriate synthetic speech voice. A 12,745-entry screened general Portuguese reference dictionary is shared, not independently regionalised. Offline audio samples and reward/lesson tests passed. Full translation review remains pending.
+
+Run SUPABASE-PORTUGUESE-UPDATE.sql after the existing course/account and wallet setup and after any older language migrations. It has been tested twice locally; hosted deployment has not been performed. Mandarin and Korean remain unavailable in the main app.
+
+Teaching references: https://www.instituto-camoes.pt/activity/centro-virtual/referencial-camoes-ple-2 ; https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/o-gerundio-e-a-perifrase-estar-a--infinitivo/34913 . These support the teaching approach and progressive construction; no claim of individual verification of every entry is made.
+
+The full Portuguese expansion preserves all original 30 lesson IDs and answers. Pronunciation metadata was added using the appropriate eSpeak NG regional voice. Apply the smaller SUPABASE-BRAZILIAN-PORTUGUESE-UPDATE.sql then SUPABASE-EUROPEAN-PORTUGUESE-UPDATE.sql; each is under 220 KB and rerunnable. The combined SUPABASE-PORTUGUESE-UPDATE.sql is also updated. No hosted migration or installer build was performed.
+
+Additional grammar references: https://cvc.instituto-camoes.pt/gramatica-dp10.html ; https://ciberduvidas-ql.iscte-iul.pt/consultorio/perguntas/diferencas-entre-o-portugues-europeu-e-o-portugues-do-brasil/13836 ; https://ciberduvidas-ql.iscte-iul.pt/consultorio/perguntas/futuro-do-conjuntivo-e-do-futuro-perfeito-do-conjuntivo/37305 .

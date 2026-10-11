@@ -34,8 +34,20 @@ Translations and explanations are available in English only. Russian and Italian
 
 
 
+
+
+
+
+
+
 ## Expanded language previews
 
-Spanish and French each include 272 lessons and 1,632 targets; German includes 297 lessons and 1,782 targets; Mandarin Chinese includes 280 lessons and 1,680 targets plus 192 reading characters. Korean includes 288 lessons, 1,728 targets, 40 Hangul letters and a composing on-screen keyboard. Each has 50 visual scenes and 62 conversations. All five are integrated locally with screened dictionaries, pronunciation, account routes and practice. Eight requested courses remain unbuilt. See LANGUAGE-EXPANSION.md for counts and limitations.
+Seven courses are available: Russian, Italian, Spanish, French, German, Brazilian Portuguese and European Portuguese. Each has 272 lessons and 1,632 targets except German (297 lessons, 1,782 targets). Each has 50 scenes and 62 conversations. Portuguese varieties have separate progress, regional vocabulary and speech, plus 24 grammar workshops; their 12,745-entry general reference dictionary is shared. Language-quality review remains pending.
 
-After the existing course/account and wallet setup, run the five numbered files in setup/language-updates separately, in order, in the hosted Supabase SQL Editor. See setup/language-updates/README.md. The combined file exceeds the SQL Editor size limit. These rerunnable updates enable progress and rewards for all five new courses and preserve Russian/Italian data. Hosted deployment is pending; do not subsequently rerun the older individual language migrations. Friends and leaderboard rendering tolerates pending language synchronization. No new installer was built.
+After existing course/account and wallet setup, apply the numbered SQL files in setup/language-updates separately, in order. Existing language progress is preserved. For the full Portuguese expansion, run the current 06-BRAZILIAN-PORTUGUESE.sql then 07-EUROPEAN-PORTUGUESE.sql, even if the earlier 30-lesson update succeeded. Hosted deployment is pending. Do not run an older language migration afterward without rerunning the two Portuguese updates.
+
+Mandarin and Korean are unavailable in the main app. Historical assets may remain in this source package. Japanese, Hindi and Arabic varieties are no longer planned. No installer was built. See LANGUAGE-EXPANSION.md and language-stats.html for details.
+
+## Windows password recovery
+
+Version 0.2.54 adds secure Windows account links and an in-app reset-password screen. See setup/PASSWORD-RESET-SETUP.md for required Supabase dashboard settings and the email template. No SQL is required for recovery. The installer build is blocked locally by an NSIS compiler DLL compatibility error; build and install on a compatible Windows environment before testing live emails.
