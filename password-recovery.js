@@ -46,6 +46,19 @@
       }
     }catch(error){if(current===serial)message(error.message,true)}finally{if(button.isConnected)button.disabled=false}
   });
-  if(root.desktop?.authRecovery){root.desktop.authRecovery.subscribe(handle);root.desktop.authRecovery.take().then(handle).catch(()=>handle({kind:'error',message:'Glossix could not receive the account link. Close Glossix completely, then open a fresh reset email.'}))}
+  if(root.desktop?.authRecovery){
+    let draining=false,again=false;
+    async function drain(){
+      if(draining){again=true;return}draining=true;
+      try{do{again=false;const payload=await root.desktop.authRecovery.take();if(payload)await handle(payload)}while(again)}
+      catch{await handle({kind:'error',message:'Glossix could not receive the account link. Close Glossix completely, then open a fresh reset email.'})}
+      finally{draining=false}
+    }
+    root.desktop.authRecovery.subscribe(drain);
+    root.addEventListener('focus',drain);
+    root.addEventListener('pageshow',drain);
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')drain()});
+    drain();
+  }
   root.GlossixRecoveryUI=Object.freeze({open:requestForm,handle});
 })(window);
