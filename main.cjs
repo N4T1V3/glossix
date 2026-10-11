@@ -9,7 +9,9 @@ ipcMain.handle('speech',async(_,payload)=>{
 });
 // Retain the established profile directory so the rename preserves desktop progress.
 app.setPath('userData',path.join(app.getPath('appData'),'lingua-studio'));
-const hasInstanceLock=!app.requestSingleInstanceLock||app.requestSingleInstanceLock();
+// Chromium may alter second-instance commandLine; preserve the original link explicitly.
+const accountLink=process.argv.find(value=>typeof value==='string'&&value.startsWith('glossix:')&&value.length<=16384);
+const hasInstanceLock=!app.requestSingleInstanceLock||app.requestSingleInstanceLock({accountLink:accountLink||''});
 let mainWindow=null;
 const authProtocol=hasInstanceLock?require('./auth-protocol.cjs').setupAuthProtocol({app,ipcMain,getWindow:()=>mainWindow}):null;
 if(!hasInstanceLock)app.quit();

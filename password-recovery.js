@@ -7,6 +7,7 @@
     if(!dialog){
       dialog=document.createElement('dialog');dialog.id='auth-recovery-dialog';dialog.className='auth-recovery-dialog';dialog.setAttribute('aria-labelledby','auth-recovery-title');
       dialog.addEventListener('cancel',clear);
+      dialog.addEventListener('close',clear);
       dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)close()});
       document.body.append(dialog);
     }
@@ -45,6 +46,6 @@
       }
     }catch(error){if(current===serial)message(error.message,true)}finally{if(button.isConnected)button.disabled=false}
   });
-  if(root.desktop?.authRecovery){root.desktop.authRecovery.subscribe(handle);root.desktop.authRecovery.take().then(handle).catch(()=>{})}
+  if(root.desktop?.authRecovery){root.desktop.authRecovery.subscribe(handle);root.desktop.authRecovery.take().then(handle).catch(()=>handle({kind:'error',message:'Glossix could not receive the account link. Close Glossix completely, then open a fresh reset email.'}))}
   root.GlossixRecoveryUI=Object.freeze({open:requestForm,handle});
 })(window);

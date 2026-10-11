@@ -5,12 +5,17 @@ on:
     tags:
       - 'v*'
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: glossix-windows-release
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
@@ -21,6 +26,27 @@ jobs:
         run: npm run configure:updates -- https://github.com/${{ github.repository }}
       - name: Build the Windows installer and update metadata
         run: npm run dist:win -- --config.directories.output=release
+      - name: Scan installer and record publisher signature
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $installer = @(Get-ChildItem release/Glossix-Setup-*.exe)
+          if ($installer.Count -ne 1) { throw 'Expected exactly one installer.' }
+          $status = Get-MpComputerStatus
+          if (!$status.AMServiceEnabled -or !$status.AntivirusEnabled) {
+            throw 'Microsoft Defender is unavailable on this runner; no scan was completed.'
+          }
+          Update-MpSignature
+          $scanner = Get-ChildItem "$env:ProgramData/Microsoft/Windows Defender/Platform/*/MpCmdRun.exe" |
+            Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (!$scanner) { throw 'Microsoft Defender scanner was not found.' }
+          & $scanner.FullName -Scan -ScanType 3 -File (Resolve-Path release).Path -DisableRemediation
+          if ($LASTEXITCODE -ne 0) { throw 'Defender detected a threat or could not finish scanning. Review the scan output.' }
+          $signature = Get-AuthenticodeSignature $installer[0].FullName
+          $hash = Get-FileHash $installer[0].FullName -Algorithm SHA256
+          @("Installer: $($installer[0].Name)", "SHA256: $($hash.Hash)", "Publisher signature status: $($signature.Status)", "Publisher: $($signature.SignerCertificate.Subject)", 'Microsoft Defender completed without detections. This does not establish a Google Safe Browsing verdict.') |
+            Set-Content release/installer-checks.txt
+          Get-Content release/installer-checks.txt >> $env:GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: Glossix-Windows-release
@@ -28,4 +54,39 @@ jobs:
             release/Glossix-Setup-*.exe
             release/*.blockmap
             release/latest.yml
+            release/installer-checks.txt
           if-no-files-found: error
+      - name: Attach files to a draft GitHub release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          if ($version -notmatch '^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$') { throw 'Invalid package version.' }
+          $tag = "v$version"
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -ne $tag) {
+            throw "The pushed tag must match package.json: $tag"
+          }
+          $tagCommit = git rev-parse --verify "refs/tags/$tag^{commit}" 2>$null
+          if ($LASTEXITCODE -eq 0 -and $tagCommit -ne $env:GITHUB_SHA) {
+            throw "Tag $tag points to a different commit. Bump the package version before releasing."
+          }
+          $installer = @(Get-ChildItem "release/Glossix-Setup-$version.exe")
+          $blockmap = @(Get-ChildItem "release/Glossix-Setup-$version.exe.blockmap")
+          if ($installer.Count -ne 1 -or $blockmap.Count -ne 1 -or !(Test-Path release/latest.yml)) {
+            throw 'The installer, blockmap and latest.yml must all be present.'
+          }
+          $assets = @($installer[0].FullName, $blockmap[0].FullName, (Resolve-Path release/latest.yml).Path, (Resolve-Path release/installer-checks.txt).Path)
+          $existing = gh release view $tag --json isDraft 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            if (!(($existing | ConvertFrom-Json).isDraft)) {
+              throw 'This release is already published. Use a new version; published files will not be replaced.'
+            }
+            gh release upload $tag @assets --clobber
+          } else {
+            gh release create $tag @assets --draft --target $env:GITHUB_SHA --title "Glossix $version" --notes 'Windows installer and automatic-update files. Review and test before publishing.'
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Could not attach release files.' }
+          "Draft release ready: https://github.com/$env:GH_REPO/releases" >> $env:GITHUB_STEP_SUMMARY

@@ -40,13 +40,10 @@ Translations and explanations are available in English only. Russian and Italian
 
 
 
-## Expanded language previews
 
-Seven courses are available: Russian, Italian, Spanish, French, German, Brazilian Portuguese and European Portuguese. Each has 272 lessons and 1,632 targets except German (297 lessons, 1,782 targets). Each has 50 scenes and 62 conversations. Portuguese varieties have separate progress, regional vocabulary and speech, plus 24 grammar workshops; their 12,745-entry general reference dictionary is shared. Language-quality review remains pending.
 
-After existing course/account and wallet setup, apply the numbered SQL files in setup/language-updates separately, in order. Existing language progress is preserved. For the full Portuguese expansion, run the current 06-BRAZILIAN-PORTUGUESE.sql then 07-EUROPEAN-PORTUGUESE.sql, even if the earlier 30-lesson update succeeded. Hosted deployment is pending. Do not run an older language migration afterward without rerunning the two Portuguese updates.
 
-Mandarin and Korean are unavailable in the main app. Historical assets may remain in this source package. Japanese, Hindi and Arabic varieties are no longer planned. No installer was built. See LANGUAGE-EXPANSION.md and language-stats.html for details.
+
 
 ## Windows password recovery
 
