@@ -2,7 +2,7 @@
   "name": "glossix-studio",
   "version": "0.2.56",
   "description": "Beginner language learning studio",
-  "main": "main.cjs",
+  "main": "desktop/main.cjs",
   "scripts": {
     "start": "electron .",
     "dist:win": "electron-builder --config electron-builder.cjs --win --publish never",

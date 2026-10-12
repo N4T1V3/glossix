@@ -1,0 +1,384 @@
+:root{--shop-paper:#f7f8f1;--shop-panel:#fffef8;--shop-ink:#1d4145;--shop-line:#ccd8c8;--shop-green:#286f60}*{box-sizing:border-box}.shop-preview{margin:0;background:var(--shop-paper);color:var(--shop-ink);font:16px/1.65 Arial,sans-serif}.shop-preview main{max-width:1280px;margin:0 auto;padding:42px 28px}.shop-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}.shop-heading h1{font-size:46px;letter-spacing:-1.5px;line-height:1.1;margin:14px 0}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}.shop-heading p{margin:12px 0}.shop-demo-note{padding:12px 20px;border:1px solid var(--shop-line);border-radius:12px;background:var(--shop-panel)}.shop-filters{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}.shop-preview button,.shop-filters button,.shop-product-body button,.shop-purchase-button{background:var(--shop-green);color:white;border:0;border-radius:12px;padding:11px 18px;font:inherit;cursor:pointer}.shop-preview button:disabled{opacity:.6;cursor:default}.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}.shop-product{border:1px solid var(--shop-line);border-radius:22px;background:var(--shop-panel);overflow:hidden;box-shadow:0 7px 20px #1c3b3110}.shop-art{border:0!important;border-radius:0!important;width:100%;height:220px;padding:0!important;display:grid;place-items:center;background:#e3e9dc!important;cursor:pointer}.shop-art img{width:100%;height:100%;object-fit:cover}.shop-art.avatar img,.shop-art.avatar-border img{width:180px;height:180px;border-radius:50%}.shop-art.design img{object-fit:cover;object-position:center}.shop-product-body{padding:20px}.shop-product h2{margin:8px 0;font-size:21px}.shop-product p{font-size:14px;min-height:68px;margin:8px 0 18px}.shop-preview dialog,.shop-confirm-dialog{width:min(680px,92vw);border:1px solid var(--shop-line);border-radius:22px;padding:24px;background:var(--shop-panel);color:var(--shop-ink)}.shop-preview dialog::backdrop,.shop-confirm-dialog::backdrop{background:#16383f99}.shop-preview dialog #close{float:right}.shop-detail-art{width:100%;max-height:280px;object-fit:contain;border-radius:14px}.shop-preview .reading-friendly,.shop-preview.reading-friendly{--shop-paper:#efe6bc;--shop-panel:#fff6d4;--shop-line:#d5c28a;line-height:1.85;letter-spacing:.03em}.reading-friendly .shop-product{background:#fff6d4;border-color:#d5c28a}.shop-owned-label{color:#286f60;font-weight:bold}.shop-status{padding:16px;line-height:1.7}.shop-preview button:focus-visible,.shop-product button:focus-visible{outline:3px solid #bd8e33;outline-offset:3px}@media(max-width:600px){.shop-preview main{padding:24px 16px}.shop-heading h1{font-size:34px}.shop-grid{grid-template-columns:1fr}.shop-product p{min-height:0}}
+
+.shop-art.banner img,.shop-art.leaderboard img{object-fit:contain}.shop-art.avatar-border{background:#24454b!important}
+.banner-shop-crane-garden{background:#183e43 url("../assets/shop/shop-crane-garden.svg") center/cover no-repeat!important;color:#fff3cf!important;}
+.banner-shop-coastal-express{background:#183e43 url("../assets/shop/shop-coastal-express.svg") center/cover no-repeat!important;color:#fff3cf!important;}
+.banner-shop-astronomers-desk{background:#183e43 url("../assets/shop/shop-astronomers-desk.svg") center/cover no-repeat!important;color:#fff3cf!important;}
+.board-design-shop-coral-current{--row-art:url("../assets/shop/shop-coral-current.svg");background:#203948 url("../assets/shop/shop-coral-current.svg") center/100% 100% no-repeat!important;color:#fff4df!important;}
+.board-design-shop-coral-current td,.board-design-shop-coral-current strong,.board-design-shop-coral-current small,.board-design-shop-coral-current .board-person{color:#fff4df!important;background-color:transparent!important;}
+.board-design-shop-silk-comet{--row-art:url("../assets/shop/shop-silk-comet.svg");background:#203948 url("../assets/shop/shop-silk-comet.svg") center/100% 100% no-repeat!important;color:#fff4df!important;}
+.board-design-shop-silk-comet td,.board-design-shop-silk-comet strong,.board-design-shop-silk-comet small,.board-design-shop-silk-comet .board-person{color:#fff4df!important;background-color:transparent!important;}
+.board-design-shop-gilded-atlas{--row-art:url("../assets/shop/shop-gilded-atlas.svg");background:#203948 url("../assets/shop/shop-gilded-atlas.svg") center/100% 100% no-repeat!important;color:#fff4df!important;}
+.board-design-shop-gilded-atlas td,.board-design-shop-gilded-atlas strong,.board-design-shop-gilded-atlas small,.board-design-shop-gilded-atlas .board-person{color:#fff4df!important;background-color:transparent!important;}
+.design-shop-glasshouse{background:#e6e8d5 url("../assets/shop/shop-glasshouse.svg") center/cover!important;}
+.design-shop-glasshouse .profile-body{background:#fffaf0ed!important;color:#204044!important;margin:12px;border-radius:16px;padding:24px!important;}
+.design-shop-paper-lanterns{background:#e6e8d5 url("../assets/shop/shop-paper-lanterns.svg") center/cover!important;}
+.design-shop-paper-lanterns .profile-body{background:#fffaf0ed!important;color:#204044!important;margin:12px;border-radius:16px;padding:24px!important;}
+.design-shop-polar-light{background:#e6e8d5 url("../assets/shop/shop-polar-light.svg") center/cover!important;}
+.design-shop-polar-light .profile-body{background:#fffaf0ed!important;color:#204044!important;margin:12px;border-radius:16px;padding:24px!important;}
+.avatar-frame-shop-sunflower-crest{position:relative;overflow:visible!important;border:0!important;padding:9%!important;background:transparent!important;}
+.avatar-frame-shop-sunflower-crest::before{content:"";position:absolute;inset:-12%;background:url("../assets/shop/shop-sunflower-crest.svg") center/contain no-repeat!important;border:0!important;box-shadow:none!important;pointer-events:none;z-index:2;}
+.avatar-frame-shop-tide-jewels{position:relative;overflow:visible!important;border:0!important;padding:9%!important;background:transparent!important;}
+.avatar-frame-shop-tide-jewels::before{content:"";position:absolute;inset:-12%;background:url("../assets/shop/shop-tide-jewels.svg") center/contain no-repeat!important;border:0!important;box-shadow:none!important;pointer-events:none;z-index:2;}
+.avatar-frame-shop-compass-crown{position:relative;overflow:visible!important;border:0!important;padding:9%!important;background:transparent!important;}
+.avatar-frame-shop-compass-crown::before{content:"";position:absolute;inset:-12%;background:url("../assets/shop/shop-compass-crown.svg") center/contain no-repeat!important;border:0!important;box-shadow:none!important;pointer-events:none;z-index:2;}
+
+.shop-art{overflow:hidden;position:relative;min-width:0}.shop-art>img{max-height:220px;min-height:0;display:block}.shop-profile-preview{display:grid;place-items:center;width:100%;height:220px;background-image:var(--shop-profile-art);background-position:center;background-size:cover;padding:15px 35px}.shop-profile-paper{display:flex;flex-direction:column;gap:4px;padding:12px 18px;width:100%;max-width:260px;background:#fffbf0f5;border:1px solid #d8cba8;border-radius:12px;color:#193f42!important;text-align:left;font-size:11px;line-height:1.5;box-shadow:0 4px 18px #183e4322}.shop-profile-paper strong{font-size:16px}.shop-profile-paper b{font-size:11px}.shop-profile-paper span:nth-child(3),.shop-profile-paper span:nth-child(5){margin-top:5px}.shop-frame-preview{position:relative;display:block;width:190px;height:190px;margin:auto}.shop-frame-preview .shop-frame-avatar{position:absolute;inset:26%;width:48%;height:48%;border-radius:50%;object-fit:cover}.shop-frame-preview .shop-frame-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.shop-detail-art{display:grid;place-items:center;max-height:none}.shop-detail-art>img{max-width:100%;max-height:280px;object-fit:contain}.shop-detail-art .shop-frame-preview{width:280px;height:280px}.shop-detail-art .shop-profile-preview{height:300px}.shop-detail-art .shop-profile-paper{font-size:14px;max-width:330px;gap:6px}.shop-detail-art .shop-profile-paper strong{font-size:22px}.shop-detail-art .shop-profile-paper b{font-size:14px}
+
+.shop-preview-shop-glasshouse{--shop-profile-art:url("../assets/shop/shop-glasshouse.svg")}
+
+.shop-preview-shop-paper-lanterns{--shop-profile-art:url("../assets/shop/shop-paper-lanterns.svg")}
+
+.shop-preview-shop-polar-light{--shop-profile-art:url("../assets/shop/shop-polar-light.svg")}
+.shop-art.avatar-border .shop-frame-preview .shop-frame-avatar{inset:22%;width:56%;height:56%;border-radius:50%;object-fit:cover}.shop-art.avatar-border .shop-frame-preview .shop-frame-overlay{inset:0;width:100%;height:100%;border-radius:0;object-fit:contain}.shop-heading label{display:block;margin:8px 0}.shop-heading select{padding:6px 10px;border:1px solid var(--shop-line);border-radius:8px;background:var(--shop-panel);color:var(--shop-ink)}
+.shop-art>img{width:100%;height:220px;max-width:100%;max-height:220px;object-fit:contain}.shop-art.banner,.shop-art.leaderboard{background:#173c43!important}.shop-frame-preview{flex:none;isolation:isolate}.shop-frame-preview .shop-frame-avatar{inset:22%;width:56%;height:56%}.shop-art.avatar-border .shop-frame-preview{width:190px;height:190px}.shop-art.avatar-border .shop-frame-preview .shop-frame-avatar{left:22%;top:22%;right:auto;bottom:auto}.shop-art.avatar-border .shop-frame-preview .shop-frame-overlay{left:0;top:0;right:auto;bottom:auto}
+
+body.shop-preview{display:block;height:auto;overflow:auto}.shop-preview main{width:100%;height:auto;overflow:visible;display:block}.shop-heading{height:auto!important;position:static!important;padding:0!important;border:0!important}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.shop-category{margin:30px 0 48px}.shop-category-heading{font-size:28px;margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--shop-line)}.shop-art.banner,.shop-art.leaderboard{height:auto;aspect-ratio:900/250;background:transparent!important}.shop-art.banner>img,.shop-art.leaderboard>img{display:block;width:100%;height:100%;max-height:none;object-fit:fill}.shop-product-body{padding:26px}.shop-preview dialog{width:min(1000px,96vw);max-height:92vh;overflow:auto}.shop-detail-art:has(.shop-actual-profile){display:block;clear:both;padding-top:16px}.shop-actual-profile{width:100%;text-align:left}.shop-actual-profile .profile-summary{width:100%;margin:0;overflow:hidden;border-radius:20px}.shop-actual-profile .profile-cover{min-height:120px!important}.shop-actual-profile .profile-body{height:auto!important;min-height:360px}.shop-actual-profile .user-avatar{object-fit:cover}.shop-preview-caption{font-size:13px;line-height:1.5;margin:12px 0;color:#45625e}.shop-detail-art.banner{width:100%;height:auto}@media(max-width:800px){.shop-grid{grid-template-columns:1fr}.shop-actual-profile .profile-body{grid-template-columns:1fr!important}.shop-actual-profile .profile-body>div{grid-column:1!important}.shop-preview dialog{padding:16px}}
+
+/* Carry each profile illustration into its readable content panel. */
+.design-shop-glasshouse .profile-body{background:linear-gradient(#fffaf0ce,#fffaf0ce),url("../assets/shop/shop-glasshouse.svg") center/cover no-repeat!important;}
+.design-shop-paper-lanterns .profile-body{background:linear-gradient(#fffaf0ce,#fffaf0ce),url("../assets/shop/shop-paper-lanterns.svg") center/cover no-repeat!important;}
+.design-shop-polar-light .profile-body{background:linear-gradient(#fffaf0ce,#fffaf0ce),url("../assets/shop/shop-polar-light.svg") center/cover no-repeat!important;}
+.shop-profile-paper{background:linear-gradient(#fffaf0ce,#fffaf0ce),var(--shop-profile-art) center/cover no-repeat;}
+
+.shop-preview-shop-citrus-terrace{--shop-profile-art:url("../assets/shop/shop-citrus-terrace.svg")}.design-shop-citrus-terrace{background:#203f49 url("../assets/shop/shop-citrus-terrace.svg") center/cover!important}.design-shop-citrus-terrace .profile-body{background:linear-gradient(#fffaf0ce,#fffaf0ce),url("../assets/shop/shop-citrus-terrace.svg") center/cover!important;color:#204044!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-preview-shop-midnight-botanical{--shop-profile-art:url("../assets/shop/shop-midnight-botanical.svg")}.design-shop-midnight-botanical{background:#203f49 url("../assets/shop/shop-midnight-botanical.svg") center/cover!important}.design-shop-midnight-botanical .profile-body{background:linear-gradient(#fffaf0ce,#fffaf0ce),url("../assets/shop/shop-midnight-botanical.svg") center/cover!important;color:#204044!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.banner-shop-floating-library{background:#26304c url("../assets/shop/shop-floating-library.svg") center/cover!important;color:#fff3cf!important}.banner-shop-koi-ripples{background:#173d42 url("../assets/shop/shop-koi-ripples.svg") center/cover!important;color:#fff3cf!important}
+
+/* Isolate the shop's artwork from the app's compact .avatar styles. */
+.shop-preview .shop-detail-art.avatar{width:100%!important;height:320px!important;min-height:320px!important;max-height:none!important;padding:16px!important;border-radius:16px!important;background:transparent!important;overflow:visible!important;display:grid!important;clear:both;margin-top:16px}.shop-preview .shop-detail-art.avatar>img{width:288px!important;height:288px!important;max-height:none!important;object-fit:contain;border-radius:50%}.shop-detail-art.leaderboard{display:block;clear:both;padding-top:16px;width:100%;height:auto}.shop-board-example{width:100%;padding:20px!important}.shop-board-example table{width:100%;border-collapse:separate;border-spacing:0 5px}.shop-board-example td{height:58px!important;padding:10px;color:#204044}.shop-board-example th{text-align:left;font-size:12px}.shop-board-example td:last-child{text-align:right}.shop-board-person{display:flex;align-items:center;gap:10px}.shop-board-person img{width:32px;height:32px;border-radius:50%;object-fit:cover}.shop-board-person small{font-size:11px}.shop-board-example .board-design{color:#fff4df!important}.shop-board-example .board-design td,.shop-board-example .board-design strong,.shop-board-example .board-design small{color:#fff4df!important;background:transparent!important}.shop-board-example .board-design td:first-child{border-radius:10px 0 0 10px}.shop-board-example .board-design td:last-child{border-radius:0 10px 10px 0}@media(max-width:600px){.shop-board-person small{display:none}.shop-board-example{padding:10px!important}.shop-board-example td{padding:8px 5px}.shop-board-person{gap:5px}}
+.board-design-shop-coral-current{background:#203948 url("../assets/shop/shop-coral-current.svg?art=12") center/100% 100% no-repeat!important}
+.board-design-shop-silk-comet{background:#203948 url("../assets/shop/shop-silk-comet.svg?art=13") center/100% 100% no-repeat!important}
+.board-design-shop-gilded-atlas{background:#203948 url("../assets/shop/shop-gilded-atlas.svg?art=12") center/100% 100% no-repeat!important}
+.board-design-shop-peacock-silk{background:#203948 url("../assets/shop/shop-peacock-silk.svg?art=12") center/100% 100% no-repeat!important}
+.board-design-shop-rose-quartz{background:#203948 url("../assets/shop/shop-rose-quartz.svg?art=12") center/100% 100% no-repeat!important}
+
+.shop-board-example tr.board-design{background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;overflow:hidden}.shop-board-example tr.board-design td{background-color:transparent!important;background-image:none!important}.shop-board-example tr.board-design::before,.shop-board-example tr.board-design::after{display:none!important}
+
+.shop-preview .shop-art.leaderboard{height:130px;aspect-ratio:auto;padding:20px 12px!important;background:var(--shop-panel)!important;display:flex;align-items:center}.shop-listing-row{width:100%;height:58px;display:grid;grid-template-columns:32px minmax(0,1fr) 28px 40px;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;overflow:hidden;color:#fff4df;font-size:12px;text-align:left;background-size:100% 100%!important}.shop-listing-player{display:flex;align-items:center;gap:7px;min-width:0}.shop-listing-player strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#fff4df}.shop-preview .shop-art.leaderboard .shop-listing-player img{width:30px;height:30px;max-height:30px;object-fit:cover;border-radius:50%;flex:none}.shop-listing-row>span:last-child{text-align:right}.shop-listing-rank{font-weight:bold}
+
+.shop-listing-row,.shop-board-example tr.board-design{background-size:cover!important;}
+
+.shop-preview .shop-art.banner{height:auto;aspect-ratio:7.5;background:transparent!important;display:block}.shop-banner-header{width:100%;aspect-ratio:7.5;display:flex;align-items:flex-start;padding:14px 18px;text-align:left;background-size:cover!important;background-position:center!important}.shop-banner-header>span{font-size:9px;letter-spacing:1.5px;font-weight:bold;color:#fff3cf;text-shadow:0 1px 3px #102734}.shop-actual-profile .profile-cover{min-height:0!important;height:auto!important;aspect-ratio:7.5;padding:16px 24px!important;background-size:cover!important;background-position:center!important}.shop-actual-profile .profile-cover .eyebrow{font-size:10px}
+.banner-shop-crane-garden{background:#173d42 url("../assets/shop/shop-crane-garden.svg?art=12") center/cover no-repeat!important;color:#fff3cf!important}
+.banner-shop-coastal-express{background:#173d42 url("../assets/shop/shop-coastal-express.svg?art=12") center/cover no-repeat!important;color:#fff3cf!important}
+.banner-shop-astronomers-desk{background:#173d42 url("../assets/shop/shop-astronomers-desk.svg?art=12") center/cover no-repeat!important;color:#fff3cf!important}
+.banner-shop-floating-library{background:#173d42 url("../assets/shop/shop-floating-library.svg?art=12") center/cover no-repeat!important;color:#fff3cf!important}
+.banner-shop-koi-ripples{background:#173d42 url("../assets/shop/shop-koi-ripples.svg?art=12") center/cover no-repeat!important;color:#fff3cf!important}
+
+.shop-listing-row,.shop-board-example tr.board-design{background-size:100% 100%!important;}
+
+.shop-listing-row strong,.shop-listing-row>span,.shop-board-example .board-design td{text-shadow:0 1px 3px #071a24,0 0 5px #071a24;}
+
+.shop-listing-row,.shop-board-example tr.board-design{background-size:cover!important;background-repeat:no-repeat!important;background-position:center!important;}
+
+.banner-shop-crane-garden{background:#183d49 url("../assets/shop/shop-crane-garden.svg?art=14") center/cover no-repeat!important;}
+
+.banner-shop-coastal-express{background:#183d49 url("../assets/shop/shop-coastal-express.svg?art=14") center/cover no-repeat!important;}
+
+.banner-shop-astronomers-desk{background:#183d49 url("../assets/shop/shop-astronomers-desk.svg?art=14") center/cover no-repeat!important;}
+
+.banner-shop-floating-library{background:#183d49 url("../assets/shop/shop-floating-library.svg?art=14") center/cover no-repeat!important;}
+
+.banner-shop-koi-ripples{background:#183d49 url("../assets/shop/shop-koi-ripples.svg?art=14") center/cover no-repeat!important;}
+
+.banner-shop-crane-garden{background:#183d49 url("../assets/shop/shop-crane-garden-real.png?v=15") center/cover no-repeat!important;}
+
+.banner-shop-coastal-express{background:#183d49 url("../assets/shop/shop-coastal-express-real.png?v=15") center/cover no-repeat!important;}
+
+.banner-shop-astronomers-desk{background:#183d49 url("../assets/shop/shop-astronomers-desk-real.png?v=15") center/cover no-repeat!important;}
+
+.banner-shop-floating-library{background:#183d49 url("../assets/shop/shop-floating-library-real.png?v=15") center/cover no-repeat!important;}
+
+.banner-shop-koi-ripples{background:#183d49 url("../assets/shop/shop-koi-ripples-real.png?v=15") center/cover no-repeat!important;}
+
+.shop-preview .shop-art.banner,.shop-banner-header{aspect-ratio:4!important;height:auto!important}.shop-actual-profile .profile-cover{aspect-ratio:4!important}.shop-banner-header>span,.shop-actual-profile .profile-cover .eyebrow{text-shadow:0 1px 4px #081d28,0 0 8px #081d28;}
+
+.board-design-shop-coral-current{background-image:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-coral-current-real.png?v=19");background-color:#102b38!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+
+.board-design-shop-coral-current{background:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-coral-current-real.png?v=19") center/cover no-repeat!important;}
+
+.board-design-shop-silk-comet{background-image:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-silk-comet-real.png?v=19");background-color:#102b38!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+
+.board-design-shop-silk-comet{background:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-silk-comet-real.png?v=19") center/cover no-repeat!important;}
+
+.board-design-shop-gilded-atlas{background-image:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-gilded-atlas-real.png?v=19");background-color:#102b38!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+
+.board-design-shop-gilded-atlas{background:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-gilded-atlas-real.png?v=19") center/cover no-repeat!important;}
+
+.board-design-shop-peacock-silk{background-image:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-peacock-silk-real.png?v=19");background-color:#102b38!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+
+.board-design-shop-peacock-silk{background:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-peacock-silk-real.png?v=19") center/cover no-repeat!important;}
+
+.board-design-shop-rose-quartz{background-image:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-rose-quartz-real.png?v=19");background-color:#102b38!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+
+.board-design-shop-rose-quartz{background:linear-gradient(90deg,#061b2b80 0%,#061b2b40 24%,#061b2b30 65%,#061b2b80 100%),url("../assets/shop/shop-rose-quartz-real.png?v=19") center/cover no-repeat!important;}
+
+.shop-listing-row{font-size:13px}.shop-listing-player strong{font-size:13px}.shop-listing-row,.shop-board-example .board-design td,.shop-board-example .board-design strong,.shop-board-example .board-design small{color:#fff!important;text-shadow:0 1px 3px #000,0 0 4px #0008;font-weight:600}.shop-listing-row{background-color:#102b38!important}
+
+/* Keep the richly detailed part of each scene inside the shallow row. */
+.board-design-shop-coral-current{background-position:center,center 82%!important}
+.board-design-shop-silk-comet{background-position:center,center 22%!important}
+.board-design-shop-peacock-silk{background-position:center,center 80%!important}
+.board-design-shop-rose-quartz{background-position:center,center 76%!important}
+
+.board-design-shop-silk-comet,.shop-board-example .board-design-shop-silk-comet{background-position:center,center 22%!important}
+.shop-board-example .board-design-shop-coral-current{background-position:center,center 82%!important}
+.shop-board-example .board-design-shop-peacock-silk{background-position:center,center 80%!important}
+.shop-board-example .board-design-shop-rose-quartz{background-position:center,center 76%!important}
+#detail .shop-board-example .compact-board-table tr.board-design-shop-silk-comet{background-position:center,center 22%!important}
+#detail .shop-board-example .compact-board-table tr.board-design-shop-coral-current{background-position:center,center 82%!important}
+#detail .shop-board-example .compact-board-table tr.board-design-shop-peacock-silk{background-position:center,center 80%!important}
+#detail .shop-board-example .compact-board-table tr.board-design-shop-rose-quartz{background-position:center,center 76%!important}
+
+.shop-preview-shop-glasshouse{--shop-profile-art:url("../assets/shop/shop-glasshouse-real.png?v=23")}
+.design-shop-glasshouse{background:#1c3437 url("../assets/shop/shop-glasshouse-real.png?v=23") center/cover no-repeat!important}
+.design-shop-glasshouse .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-glasshouse-real.png?v=23") center/cover no-repeat!important;color:#153d43!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-preview-shop-paper-lanterns{--shop-profile-art:url("../assets/shop/shop-paper-lanterns-real.png?v=23")}
+.design-shop-paper-lanterns{background:#1c3437 url("../assets/shop/shop-paper-lanterns-real.png?v=23") center/cover no-repeat!important}
+.design-shop-paper-lanterns .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-paper-lanterns-real.png?v=23") center/cover no-repeat!important;color:#153d43!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-preview-shop-polar-light{--shop-profile-art:url("../assets/shop/shop-polar-light-real.png?v=23")}
+.design-shop-polar-light{background:#1c3437 url("../assets/shop/shop-polar-light-real.png?v=23") center/cover no-repeat!important}
+.design-shop-polar-light .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-polar-light-real.png?v=23") center/cover no-repeat!important;color:#153d43!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-preview-shop-citrus-terrace{--shop-profile-art:url("../assets/shop/shop-citrus-terrace-real.png?v=23")}
+.design-shop-citrus-terrace{background:#1c3437 url("../assets/shop/shop-citrus-terrace-real.png?v=23") center/cover no-repeat!important}
+.design-shop-citrus-terrace .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-citrus-terrace-real.png?v=23") center/cover no-repeat!important;color:#153d43!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-preview-shop-midnight-botanical{--shop-profile-art:url("../assets/shop/shop-midnight-botanical-real.png?v=23")}
+.design-shop-midnight-botanical{background:#1c3437 url("../assets/shop/shop-midnight-botanical-real.png?v=23") center/cover no-repeat!important}
+.design-shop-midnight-botanical .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-midnight-botanical-real.png?v=23") center/cover no-repeat!important;color:#153d43!important;margin:12px;border-radius:16px;padding:24px!important}
+
+.shop-profile-paper{background:linear-gradient(#fffaf0e6,#fffaf0e6),var(--shop-profile-art) center/cover no-repeat!important;color:#153d43!important}.shop-actual-profile .profile-body .pill{background:#fffcf2e8}.shop-actual-profile .profile-body h2,.shop-actual-profile .profile-body h3{color:#123a43}
+
+/* Profile themes begin below the independently selected default banner. */
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover.banner-default{background:radial-gradient(ellipse at 85% 20%,#bfd6b2 0,transparent 55%),linear-gradient(120deg,#183f3a,#36766b)!important;aspect-ratio:auto!important;min-height:130px!important;position:relative;isolation:isolate}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover.banner-default:after{content:"";position:absolute;inset:auto 0 -1px;height:32px;background:linear-gradient(transparent,#edf0e5);pointer-events:none;z-index:-1}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body{margin:0 12px 12px!important;border-radius:0 0 16px 16px!important;position:relative;border-top:1px solid #edf0e5}
+
+/* Fade down into the profile artwork, without whitening the banner. */
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover{position:relative;isolation:isolate}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover.banner-classic{background:radial-gradient(ellipse at 85% 20%,#bfd6b2 0,transparent 55%),linear-gradient(120deg,#183f3a,#36766b)!important;aspect-ratio:auto!important;min-height:130px!important}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover:after{content:"";position:absolute;inset:auto 0 -1px;height:28px;background:linear-gradient(transparent,#173b38);pointer-events:none;z-index:-1}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body{border-top:0!important;box-shadow:0 -12px 24px #173b3830}
+.shop-actual-profile .profile-equipped-frame{width:124px;height:124px;flex-shrink:0;margin:0}
+.shop-actual-profile .profile-equipped-frame .shop-frame-avatar{inset:22%;width:56%;height:56%;border:0;box-shadow:none}
+.shop-detail-art.avatar:has(.shop-actual-profile){height:auto!important;display:block}
+
+.shop-board-example .board-equipped-frame{width:38px;height:38px;margin:0;flex-shrink:0}.shop-board-example .board-equipped-frame .shop-frame-avatar{inset:22%;width:56%;height:56%}.shop-board-example .board-equipped-frame .shop-frame-overlay{inset:0;width:100%;height:100%;border-radius:0}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover:after{display:none!important}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body:before{content:"";position:absolute;left:-12px;right:-12px;top:0;height:24px;background:linear-gradient(#173b38,transparent);pointer-events:none;border-radius:0;z-index:0}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body>div{position:relative;z-index:1}
+
+.shop-frame-preview .shop-frame-avatar{inset:22%;width:56%;height:56%;object-fit:cover;border-radius:50%}.shop-frame-preview .shop-frame-overlay{inset:0;width:100%;height:100%;object-fit:contain}.shop-art.avatar-border{padding:18px}.shop-actual-profile .profile-equipped-frame{width:144px;height:144px}
+
+/* Match the centre and diameter of each artwork's transparent opening. */
+.shop-frame-preview[data-border="shop-sunflower-crest"]{--face-x:51.8%;--face-y:49.9%;--face-size:68%}
+.shop-frame-preview[data-border="shop-tide-jewels"]{--face-x:50.5%;--face-y:49.9%;--face-size:79%}
+.shop-frame-preview[data-border="shop-compass-crown"]{--face-x:50%;--face-y:49.6%;--face-size:64%}
+.shop-frame-preview[data-border="shop-ruby-laurel"]{--face-x:50%;--face-y:49.4%;--face-size:67%}
+.shop-frame-preview[data-border="shop-lunar-orbit"]{--face-x:50%;--face-y:49.6%;--face-size:63%}
+.shop-frame-preview[data-border] .shop-frame-avatar{inset:auto!important;left:var(--face-x,50%)!important;top:var(--face-y,50%)!important;width:var(--face-size,64%)!important;height:var(--face-size,64%)!important;transform:translate(-50%,-50%)!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;margin:0!important}
+
+/* Fix portrait size; scale the artwork to its opening, rather than zooming the portrait. */
+.shop-frame-preview[data-border]{--portrait-size:56%}
+.shop-frame-preview[data-border="shop-sunflower-crest"]{--ring-scale:0.84216216;--ring-x:51.8%;--ring-y:49.9%}
+.shop-frame-preview[data-border="shop-tide-jewels"]{--ring-scale:0.85547421;--ring-x:50.5%;--ring-y:49.9%}
+.shop-frame-preview[data-border="shop-compass-crown"]{--ring-scale:0.82858985;--ring-x:50%;--ring-y:49.6%}
+.shop-frame-preview[data-border="shop-ruby-laurel"]{--ring-scale:0.84009804;--ring-x:50%;--ring-y:49.4%}
+.shop-frame-preview[data-border="shop-lunar-orbit"]{--ring-scale:0.84009804;--ring-x:50%;--ring-y:49.6%}
+.shop-frame-preview[data-border] .shop-frame-avatar{left:50%!important;top:50%!important;width:var(--portrait-size)!important;height:var(--portrait-size)!important;transform:translate(-50%,-50%)!important}
+.shop-frame-preview[data-border] .shop-frame-overlay{inset:auto!important;left:calc(50% - (var(--ring-x) - 50%)*var(--ring-scale))!important;top:calc(50% - (var(--ring-y) - 50%)*var(--ring-scale))!important;width:calc(100% * var(--ring-scale))!important;height:calc(100% * var(--ring-scale))!important;max-width:none!important;max-height:none!important;transform:translate(-50%,-50%)!important}
+
+/* Expanded collection: detailed original scenes and materials. */
+.banner-shop-mountain-rail{background:#183d49 url("../assets/shop/shop-mountain-rail.png?v=32") center/cover no-repeat!important}
+.banner-shop-sakura-river{background:#183d49 url("../assets/shop/shop-sakura-river.png?v=32") center/cover no-repeat!important}
+.board-design-shop-obsidian-gold{background:linear-gradient(90deg,#061b2b75,#061b2b30 40%,#061b2b30 65%,#061b2b75),url("../assets/shop/shop-obsidian-gold.png?v=32") center/cover no-repeat!important;color:#fff!important}
+.board-design-shop-jade-river{background:linear-gradient(90deg,#061b2b75,#061b2b30 40%,#061b2b30 65%,#061b2b75),url("../assets/shop/shop-jade-river.png?v=32") center/cover no-repeat!important;color:#fff!important}
+.shop-preview-shop-wisteria-palace{--shop-profile-art:url("../assets/shop/shop-wisteria-palace.png?v=32")}.design-shop-wisteria-palace{background:#1c3437 url("../assets/shop/shop-wisteria-palace.png?v=32") center/cover no-repeat!important}.design-shop-wisteria-palace .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-wisteria-palace.png?v=32") center/cover no-repeat!important;color:#153d43!important;margin:0 12px 12px;border-radius:0 0 16px 16px;padding:24px!important}
+.shop-preview-shop-autumn-orangery{--shop-profile-art:url("../assets/shop/shop-autumn-orangery.png?v=32")}.design-shop-autumn-orangery{background:#1c3437 url("../assets/shop/shop-autumn-orangery.png?v=32") center/cover no-repeat!important}.design-shop-autumn-orangery .profile-body{background:linear-gradient(#fffaf0df,#fffaf0df),url("../assets/shop/shop-autumn-orangery.png?v=32") center/cover no-repeat!important;color:#153d43!important;margin:0 12px 12px;border-radius:0 0 16px 16px;padding:24px!important}
+.shop-frame-preview[data-border="shop-emerald-vines"]{--ring-x:50.079744816586924%;--ring-y:49.00318979266348%;--ring-scale:0.83194175}
+.shop-frame-preview[data-border="shop-frost-crown"]{--ring-x:50.199362041467296%;--ring-y:49.16267942583732%;--ring-scale:0.83532088}
+.shop-board-person>.avatar-frame{width:32px;height:32px;display:inline-flex;flex-shrink:0;align-items:center;justify-content:center}.shop-board-person>.avatar-frame>img{width:32px;height:32px;object-fit:cover;border-radius:50%;display:block}
+
+#coin-shop{display:block;background:transparent;padding:12px;overflow:visible}#coin-shop .shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}#coin-shop .shop-art{width:100%;border:0;min-height:180px}#coin-shop .shop-art.banner,#coin-shop .shop-art.leaderboard{min-height:0}#coin-shop .shop-art.avatar img{width:180px;height:180px;object-fit:cover;border-radius:50%;margin:auto}#coin-shop .shop-art.avatar-border{display:grid;place-items:center;min-height:220px}#coin-shop-detail .profile-equipped-frame,.profile-summary .profile-equipped-frame{width:144px;height:144px;margin:0;flex-shrink:0}.shop-frame-avatar>.user-avatar{width:100%!important;height:100%!important;border:0!important;border-radius:50%!important;box-shadow:none!important;margin:0!important}#coin-shop-detail .profile-summary{overflow:hidden}#coin-shop-detail .compact-board-table .profile-equipped-frame{width:38px;height:38px}@media(max-width:800px){#coin-shop .shop-grid{grid-template-columns:1fr}}
+
+#coin-shop{padding:0}#coin-shop>.shop-storefront{display:block}#coin-shop .shop-welcome{position:relative}#coin-shop .shop-filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}#coin-shop .shop-display .shop-category{margin:28px 0}#coin-shop .shop-toolbar{margin-bottom:12px}
+
+/* Listing artwork uses a contained leaderboard row, never an oversized avatar. */
+#coin-shop .shop-art.leaderboard{height:110px;aspect-ratio:auto;display:flex;align-items:center;padding:20px 12px!important;background:var(--shop-panel,#fffdf6)!important}
+.shop-art.leaderboard .shop-listing-player img{width:30px!important;height:30px!important;min-width:30px!important;max-width:30px!important;max-height:30px!important;min-height:0!important;object-fit:cover!important;border-radius:50%!important;flex:0 0 30px!important;margin:0!important}
+.shop-art.leaderboard .shop-listing-player{min-width:0;overflow:hidden}.shop-art.leaderboard .shop-listing-row{min-width:0;flex:1}
+#coin-shop .shop-art.design{padding:0;display:block}.shop-art.design .shop-profile-preview{display:block;padding:0;height:220px;width:100%}
+
+#coin-shop-detail .compact-board-table{table-layout:fixed;width:100%;border-collapse:separate;border-spacing:0 5px}
+#coin-shop-detail .compact-board-table th{text-align:left;padding:8px}
+#coin-shop-detail .compact-board-table td{padding:8px;vertical-align:middle}
+#coin-shop-detail .compact-board-table .board-person{display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:0}
+#coin-shop-detail .compact-board-table .board-person>.avatar-frame{width:32px;height:32px;flex:0 0 32px}
+#coin-shop-detail .compact-board-table .user-avatar{width:32px!important;height:32px!important;object-fit:cover;border-radius:50%}
+#coin-shop-detail .compact-board-table .board-person>span:last-child{min-width:0}
+#coin-shop-detail .compact-board-table td:last-child,#coin-shop-detail .compact-board-table th:last-child{text-align:right}
+
+/* One shared leaderboard row in listing and detail. */
+#coin-shop .shop-listing-row,#coin-shop-detail .shop-listing-row{display:grid;grid-template-columns:40px minmax(0,1fr) 56px 60px;gap:8px;align-items:center;width:100%;height:58px;min-height:58px;padding:8px;box-sizing:border-box;border-radius:10px;color:white;font-size:12px;text-align:left;overflow:hidden}
+#coin-shop .shop-listing-player,#coin-shop-detail .shop-listing-player{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden}
+.shop-listing-player strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#coin-shop .shop-listing-player>.avatar-frame,#coin-shop-detail .shop-listing-player>.avatar-frame{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 32px!important;width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;max-width:32px!important;max-height:32px!important;padding:0!important;margin:0!important;aspect-ratio:1}
+#coin-shop .shop-listing-player .user-avatar,#coin-shop-detail .shop-listing-player .user-avatar{display:block!important;width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;max-width:32px!important;max-height:32px!important;flex:none!important;object-fit:cover!important;border-radius:50%!important;margin:0!important;box-sizing:border-box}
+#coin-shop .shop-listing-player>.profile-equipped-frame,#coin-shop-detail .shop-listing-player>.profile-equipped-frame{width:38px!important;height:38px!important;flex:0 0 38px!important;min-height:38px!important;margin:0!important}
+#coin-shop .shop-listing-player .shop-frame-avatar .user-avatar,#coin-shop-detail .shop-listing-player .shop-frame-avatar .user-avatar{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important}
+.shop-row-head{display:grid;grid-template-columns:40px minmax(0,1fr) 56px 60px;gap:8px;padding:8px;font-size:11px;text-align:left}.shop-row-head>span:nth-last-child(-n+2),.shop-listing-row>span:nth-last-child(-n+2){text-align:right}
+
+/* Scale the complete earned frame with its portrait, preserving ring proportions. */
+#coin-shop .shop-listing-player,#coin-shop-detail .shop-listing-player{overflow:visible;min-height:42px}
+#coin-shop .shop-listing-player>.avatar-frame,#coin-shop-detail .shop-listing-player>.avatar-frame{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important;flex:0 0 124px!important;zoom:.2580645161!important;margin:0 12px!important;overflow:visible!important}
+#coin-shop .shop-listing-player .avatar-frame .user-avatar,#coin-shop-detail .shop-listing-player .avatar-frame .user-avatar{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important}
+
+/* Render the app's real leaderboard content in both shopping surfaces. */
+#coin-shop .shop-real-board,#coin-shop-detail .shop-real-board{table-layout:fixed;width:100%;border-collapse:separate;border-spacing:0;font-size:12px}
+#coin-shop .shop-real-board td,#coin-shop-detail .shop-real-board td{height:48px;padding:6px 8px;vertical-align:middle;text-align:left}
+#coin-shop .shop-real-board td:last-child,#coin-shop-detail .shop-real-board td:last-child{text-align:right}
+#coin-shop .shop-real-board .board-person,#coin-shop-detail .shop-real-board .board-person{display:flex;align-items:center;gap:10px;width:100%;padding:0;min-width:0;text-align:left}
+#coin-shop .shop-real-board .board-person>.avatar-frame,#coin-shop-detail .shop-real-board .board-person>.avatar-frame{display:inline-flex!important;align-items:center;justify-content:center;width:124px!important;height:124px!important;min-width:124px!important;max-width:124px!important;min-height:124px!important;max-height:124px!important;zoom:.2580645161!important;flex:none!important;padding:0!important;margin:0 12px!important;overflow:visible!important}
+#coin-shop .shop-real-board .avatar-frame .user-avatar,#coin-shop-detail .shop-real-board .avatar-frame .user-avatar{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important;object-fit:cover;border-radius:50%}
+#coin-shop .shop-real-board .board-person>span:not(.avatar-frame):not(.profile-equipped-frame),#coin-shop-detail .shop-real-board .board-person>span:not(.avatar-frame):not(.profile-equipped-frame){display:flex;align-items:center;gap:10px;min-width:0;flex-wrap:wrap;overflow:visible}
+#coin-shop .shop-real-board .board-person small,#coin-shop-detail .shop-real-board .board-person small{font-size:10px}
+#coin-shop .shop-real-board .profile-equipped-frame,#coin-shop-detail .shop-real-board .profile-equipped-frame{width:38px!important;height:38px!important;flex:0 0 38px!important;margin:0!important}
+#coin-shop .shop-real-board .profile-equipped-frame .user-avatar,#coin-shop-detail .shop-real-board .profile-equipped-frame .user-avatar{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important}
+#coin-shop-detail .shop-row-head{grid-template-columns:9% 57% 17% 17%;gap:0;box-sizing:border-box}
+
+/* Leaderboard rows need the same horizontal room as the actual leaderboard. */
+#coin-shop .shop-grid:has(.shop-art.leaderboard){grid-template-columns:minmax(0,1fr)}
+#coin-shop .shop-art.leaderboard{height:96px;padding:20px 12px!important}
+#coin-shop .shop-real-board .board-person>span:not(.avatar-frame):not(.profile-equipped-frame),#coin-shop-detail .shop-real-board .board-person>span:not(.avatar-frame):not(.profile-equipped-frame){flex-wrap:nowrap!important;white-space:nowrap;gap:12px}
+.shop-real-board .board-person strong{white-space:nowrap;flex-shrink:0}.shop-real-board .board-person small{white-space:nowrap}
+#coin-shop .shop-real-board tbody tr,#coin-shop-detail .shop-real-board tbody tr{border-radius:10px}
+#coin-shop .shop-real-board td:first-child,#coin-shop-detail .shop-real-board td:first-child{border-radius:10px 0 0 10px}
+#coin-shop .shop-real-board td:last-child,#coin-shop-detail .shop-real-board td:last-child{border-radius:0 10px 10px 0}
+#coin-shop .shop-real-board,#coin-shop-detail .shop-real-board{border-radius:10px;overflow:hidden}
+@media(max-width:600px){#coin-shop .shop-art.leaderboard{overflow-x:auto;justify-content:flex-start}#coin-shop .shop-real-board,#coin-shop-detail .shop-real-board{min-width:580px}#coin-shop-detail .compact-board{overflow-x:auto}}
+
+/* Identical, unscaled 720 × 48 leaderboard canvas in shop and preview. */
+#coin-shop .shop-grid:has(.shop-art.leaderboard){width:744px;max-width:100%}
+#coin-shop .shop-art.leaderboard{display:block;overflow-x:auto;height:88px;box-sizing:border-box}
+#coin-shop .shop-real-board,#coin-shop-detail .shop-real-board{width:720px!important;min-width:720px!important;max-width:720px!important;flex:none;margin:0;border-spacing:0}
+#coin-shop .shop-real-board td,#coin-shop-detail .shop-real-board td{height:48px!important;box-sizing:border-box;padding:6px 8px!important}
+#coin-shop .shop-real-board tr.board-design,#coin-shop-detail .shop-real-board tr.board-design{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+#coin-shop-detail .compact-board:has(.shop-real-board){width:754px;max-width:100%;box-sizing:border-box;overflow-x:auto}
+#coin-shop-detail .compact-board:has(.shop-real-board) .shop-row-head{width:720px;min-width:720px}
+#coin-shop .shop-grid:has(.shop-art.leaderboard){width:746px}
+
+/* Fit without a horizontal scrollbar; preserve the artwork proportions. */
+#coin-shop .shop-grid:has(.shop-art.leaderboard){width:748px;max-width:100%}
+#coin-shop .shop-art.leaderboard{overflow:hidden!important;width:100%;padding:20px 12px!important}
+#coin-shop .shop-real-board,#coin-shop-detail .shop-real-board{width:100%!important;max-width:720px!important;min-width:0!important;box-sizing:border-box}
+#coin-shop-detail .compact-board:has(.shop-real-board){overflow:hidden!important;width:754px;max-width:100%}
+#coin-shop-detail .compact-board:has(.shop-real-board) .shop-row-head{width:100%;max-width:720px;min-width:0}
+.shop-real-board tr.board-design{color:#fff!important;text-shadow:0 1px 3px #000,0 0 5px #0009}
+.shop-real-board tr.board-design small{color:#fff!important;opacity:.9}
+
+/* Show the detailed areas of dark artwork in narrow leaderboard rows. */
+.board-design-shop-silk-comet{background:linear-gradient(90deg,#061b2b35,transparent 30%,transparent 75%,#061b2b25),url("../assets/shop/shop-silk-comet-real.png?v=19") center 20%/cover no-repeat!important;background-color:#20283c!important;background-blend-mode:normal,screen!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 5px #000!important}
+#coin-shop .shop-real-board tr.board-design-shop-silk-comet,#coin-shop-detail .shop-real-board tr.board-design-shop-silk-comet{background-position:center 20%!important}
+.board-design-shop-gilded-atlas{background:linear-gradient(90deg,#061b2b35,transparent 30%,transparent 75%,#061b2b25),url("../assets/shop/shop-gilded-atlas-real.png?v=19") center 70%/cover no-repeat!important;background-color:#29251b!important;background-blend-mode:normal,screen!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 5px #000!important}
+#coin-shop .shop-real-board tr.board-design-shop-gilded-atlas,#coin-shop-detail .shop-real-board tr.board-design-shop-gilded-atlas{background-position:center 70%!important}
+.board-design-shop-peacock-silk{background:linear-gradient(90deg,#061b2b35,transparent 30%,transparent 75%,#061b2b25),url("../assets/shop/shop-peacock-silk-real.png?v=19") center 16%/cover no-repeat!important;background-color:#15352e!important;background-blend-mode:normal,screen!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 5px #000!important}
+#coin-shop .shop-real-board tr.board-design-shop-peacock-silk,#coin-shop-detail .shop-real-board tr.board-design-shop-peacock-silk{background-position:center 16%!important}
+
+/* Preserve each banner artwork’s complete native composition everywhere. */
+.banner-shop-crane-garden{--banner-aspect:2170 / 725}
+.banner-shop-coastal-express{--banner-aspect:2048 / 768}
+.banner-shop-astronomers-desk{--banner-aspect:1916 / 821}
+.banner-shop-floating-library{--banner-aspect:1983 / 793}
+.banner-shop-koi-ripples{--banner-aspect:2046 / 769}
+.banner-shop-mountain-rail{--banner-aspect:2172 / 724}
+.banner-shop-sakura-river{--banner-aspect:2172 / 724}
+
+#coin-shop .shop-art.banner{display:block;padding:0!important;aspect-ratio:auto!important;height:auto!important;min-height:0!important}
+#coin-shop .shop-banner-header[class*="banner-shop-"],.profile-summary .profile-cover[class*="banner-shop-"],.shop-actual-profile .profile-cover[class*="banner-shop-"]{display:block;width:100%;height:auto!important;min-height:0!important;aspect-ratio:var(--banner-aspect)!important;box-sizing:border-box;background-size:100% auto!important;background-position:center top!important;background-repeat:no-repeat!important}
+#coin-shop .shop-banner-header[class*="banner-shop-"]{padding:0!important}
+
+/* Unified profile layout: calm spacing, a slimmer header, and independent identity. */
+.profile-summary .profile-cover,#coin-shop .shop-banner-header,.shop-actual-profile .profile-cover,.profile-summary .profile-cover[class*="banner-shop-"],#coin-shop .shop-banner-header[class*="banner-shop-"],.shop-actual-profile .profile-cover[class*="banner-shop-"]{aspect-ratio:3.2 / 1!important;width:100%;height:auto!important;min-height:0!important;box-sizing:border-box;background-size:cover!important;background-position:center!important;padding:20px 24px!important}
+#coin-shop .shop-banner-header,#coin-shop .shop-banner-header[class*="banner-shop-"]{padding:0!important}
+.banner-choice .banner-swatch{width:100%;height:auto!important;min-height:0!important;aspect-ratio:3.2 / 1!important;background-size:cover!important;background-position:center!important}
+.profile-summary .profile-body{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"identity identity" "region learning" "totals friends" "favourites interests"!important;gap:22px 32px!important;padding:28px!important;margin:0 12px 12px!important;position:relative}
+.profile-summary .profile-identity{grid-area:identity!important;position:relative!important;display:flex!important;align-items:center!important;gap:24px!important;margin:0!important;padding:12px 8px 20px!important;min-height:96px!important;transform:none!important;border-bottom:1px solid currentColor;border-color:#78978b30}
+.profile-summary .profile-identity h2{margin:0!important;line-height:1.25;overflow-wrap:anywhere}
+.profile-summary .profile-identity>.avatar-frame{width:124px!important;height:124px!important;zoom:.65!important;margin:8px 12px!important;flex:none!important}
+.profile-summary .profile-identity>.avatar-frame .user-avatar{width:124px!important;height:124px!important;min-width:124px!important;object-fit:cover;border-radius:50%}
+.profile-summary .profile-identity>.profile-equipped-frame{width:144px!important;height:144px!important;zoom:.8;margin:0!important;flex:none}
+.profile-summary .profile-region{grid-area:region!important}.profile-summary .profile-learning{grid-area:learning!important}.profile-summary .profile-totals{grid-area:totals!important}.profile-summary .profile-friends{grid-area:friends!important}.profile-summary .profile-favourites{grid-area:favourites!important}.profile-summary .profile-interests{grid-area:interests!important}
+.profile-summary :is(.profile-region,.profile-learning,.profile-totals,.profile-friends,.profile-favourites,.profile-interests){margin:0!important;padding:0!important;min-width:0;border:0}
+.profile-summary h3{margin:0 0 12px!important;font-size:16px}.profile-summary .profile-region p{margin:8px 0 0}.profile-summary .profile-totals{display:grid;grid-template-columns:1fr 1fr;gap:12px}.profile-summary .profile-totals>div{padding:14px!important;border-radius:14px}.profile-summary .profile-tags{display:flex;flex-wrap:wrap;gap:8px}.profile-summary .profile-friends{align-self:center}
+@media(max-width:600px){.profile-summary .profile-body{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"identity" "region" "learning" "totals" "friends" "favourites" "interests"!important;gap:20px!important;padding:20px!important;margin:0 6px 6px!important}.profile-summary .profile-identity{gap:16px!important;padding-left:0!important}.profile-summary .profile-identity h2{font-size:24px}.profile-summary .profile-cover{padding:14px!important}.profile-summary .profile-cover .eyebrow{font-size:9px}}
+
+/* Compact profile details keep the entire profile visible on desktop. */
+.profile-summary .profile-body{gap:12px 24px!important;padding:18px 22px!important;margin:0 10px 10px!important}
+.profile-summary .profile-identity{min-height:70px!important;padding:4px 4px 12px!important;gap:18px!important}
+.profile-summary .profile-identity>.avatar-frame{zoom:.5!important;margin:8px 12px!important}
+.profile-summary .profile-identity>.profile-equipped-frame{zoom:.6!important}
+.profile-summary h3{margin-bottom:8px!important}.profile-summary .profile-totals>div{padding:10px 12px!important}.profile-summary .profile-tags{gap:5px}.profile-summary .profile-region p{margin-top:4px}.profile-summary .profile-tags .pill{padding:4px 8px}
+#coin-shop-detail{overflow:visible!important;max-height:none!important}
+#coin-shop-detail .equipped-preview-content{overflow:visible!important;max-height:none!important}
+
+.equipped-preview-dialog{overflow:visible!important;max-height:none!important}.equipped-preview-dialog .equipped-preview-content{overflow:visible!important;max-height:none!important}
+
+/* Keep normal-size profile text; save height in the banner instead. */
+#view .profile-summary{zoom:1!important}
+.profile-summary .profile-cover,#coin-shop .shop-banner-header,.shop-actual-profile .profile-cover,.profile-summary .profile-cover[class*="banner-shop-"],#coin-shop .shop-banner-header[class*="banner-shop-"],.shop-actual-profile .profile-cover[class*="banner-shop-"]{aspect-ratio:5.5 / 1!important;min-height:0!important;height:auto!important}
+.banner-choice .banner-swatch{aspect-ratio:5.5 / 1!important}
+
+.profile-summary .profile-cover,#coin-shop .shop-banner-header,.shop-actual-profile .profile-cover,.profile-summary .profile-cover[class*="banner-shop-"],#coin-shop .shop-banner-header[class*="banner-shop-"],.shop-actual-profile .profile-cover[class*="banner-shop-"]{aspect-ratio:8 / 1!important}
+.banner-choice .banner-swatch{aspect-ratio:8 / 1!important}
+#view:has(#public-profile-content)>.eyebrow,#view:has(#public-profile-content)>p{display:none}
+#view:has(#public-profile-content)>h1{margin:8px 0 14px}
+
+/* Owner profile: compact information groups and an integrated support panel. */
+.profile-summary:has(.owner-support-bio) .profile-body{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-areas:"identity identity identity" "region totals friends" "learning favourites interests" "support support support"!important;gap:14px 20px!important;padding:18px 22px!important}
+.profile-summary:has(.owner-support-bio) .profile-identity{padding-bottom:10px!important;min-height:78px!important}
+.profile-summary:has(.owner-support-bio) .profile-region,.profile-summary:has(.owner-support-bio) .profile-favourites,.profile-summary:has(.owner-support-bio) .profile-interests,.profile-summary:has(.owner-support-bio) .profile-learning{align-self:start;min-height:0!important}
+.profile-summary:has(.owner-support-bio) .profile-totals{gap:8px}.profile-summary:has(.owner-support-bio) .profile-totals .eyebrow{font-size:10px;letter-spacing:.12em;white-space:nowrap}
+.profile-summary:has(.owner-support-bio) .profile-friends{align-self:center;justify-self:start}
+.profile-summary:has(.owner-support-bio) .learning-flags{margin:0;gap:6px}.profile-summary:has(.owner-support-bio) .learning-language{padding:5px 8px}
+.profile-summary .owner-support-bio{grid-area:support!important;align-self:start;box-sizing:border-box;border:1px solid #78978b30;border-radius:12px!important;margin:0!important;padding:10px 12px!important;background:#ffffff85!important}
+.profile-summary .owner-support-bio summary{font-weight:600;cursor:pointer;line-height:1.4;padding:0}
+.profile-summary .owner-support-bio[open]{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 18px;align-items:start}
+.profile-summary .owner-support-bio[open] summary{grid-column:1/-1;margin-bottom:2px}
+.profile-summary .owner-support-bio p:not(.note){grid-column:1;grid-row:2/4;margin:0!important;line-height:1.5}
+.profile-summary .owner-support-bio button{grid-column:2;grid-row:2;align-self:start;padding:10px 14px;white-space:nowrap}
+.profile-summary .owner-support-bio .note{grid-column:2;grid-row:3;margin:0!important;font-size:12px}
+@media(max-width:700px){.profile-summary:has(.owner-support-bio) .profile-body{grid-template-columns:1fr 1fr!important;grid-template-areas:"identity identity" "region friends" "totals totals" "learning favourites" "interests interests" "support support"!important}.profile-summary .owner-support-bio[open]{grid-template-columns:1fr}.profile-summary .owner-support-bio p:not(.note),.profile-summary .owner-support-bio button,.profile-summary .owner-support-bio .note{grid-column:1;grid-row:auto}}
+.profile-summary:has(.owner-support-bio) .profile-body{gap:10px 20px!important;padding:14px 22px!important}.profile-summary .owner-support-bio p:not(.note){margin:6px 0!important}.profile-summary .owner-support-bio .note{margin:4px 0 0!important}
+.profile-summary:has(.owner-support-bio) .profile-body{row-gap:8px!important}
+
+.profile-summary .owner-support-bio summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px!important;border-radius:8px;background:#ffffffa8;list-style:none;box-shadow:0 0 0 1px #49776a45;font-weight:700}
+.profile-summary .owner-support-bio summary::-webkit-details-marker{display:none}.profile-summary .owner-support-bio summary::after{content:"Show support ▾";font-size:12px;white-space:nowrap;padding:5px 9px;border:1px solid currentColor;border-radius:7px}.profile-summary .owner-support-bio[open] summary::after{content:"Hide support ▴"}.profile-summary .owner-support-bio summary:focus-visible{outline:3px solid #267c6c;outline-offset:3px}
+.profile-summary .profile-identity>.avatar-frame,.profile-summary .profile-identity .profile-inline-avatar>.avatar-frame{width:124px!important;height:124px!important;zoom:.65!important;flex:none!important;margin:8px 12px!important}
+.profile-summary .profile-identity .avatar-frame .user-avatar{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;object-fit:cover;border-radius:50%}
+.profile-summary .profile-identity .profile-equipped-frame{width:144px!important;height:144px!important;zoom:.8!important}
+.learning-explanation{margin:12px 0;border-top:1px solid #74988b40;padding-top:8px}.learning-explanation p{margin:8px 0}.answer-result-notice[hidden]{display:block!important}
+
+#coin-shop-detail,.equipped-preview-dialog{zoom:1!important;max-height:calc(100dvh - 32px)!important;overflow-y:auto!important}
+
+/* Keep full-size avatars and text while reducing popup-only empty margins. */
+#coin-shop-detail{padding:16px 20px!important}
+#coin-shop-detail>h2{margin:12px 0 6px!important}#coin-shop-detail>p{margin:6px 0!important}
+#coin-shop-detail>.equipped-preview-content{margin:12px 0 0!important}
+#coin-shop-detail .profile-body{padding:12px 18px!important;gap:8px 20px!important}
+#coin-shop-detail .profile-summary[class*="design-shop-"] .profile-body{padding:12px 18px!important;color:#153d43!important}
+#coin-shop-detail .profile-summary[class*="design-shop-"] .profile-body :is(.eyebrow,.profile-region p){color:#153d43!important}
+#coin-shop-detail .profile-identity{padding:0 4px 8px!important;min-height:0!important}
+#coin-shop-detail .profile-identity .avatar-frame{margin:4px 12px!important}
+#coin-shop-detail #shop-action-status:empty{display:none}
+
+/* One portrait diameter for free frames, decorative frames, and profile previews. */
+.profile-summary .profile-identity>.avatar-frame,.profile-summary .profile-identity .profile-inline-avatar>.avatar-frame{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;zoom:.6451612903225806!important;flex:none!important;overflow:visible!important}
+.profile-summary .profile-identity .avatar-frame .user-avatar{display:block;width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important;object-fit:cover!important;border-radius:50%!important;box-sizing:border-box}
+.profile-summary .profile-identity .shop-frame-preview.profile-equipped-frame{width:142.857142857px!important;height:142.857142857px!important;min-width:142.857142857px!important;min-height:142.857142857px!important;max-width:142.857142857px!important;max-height:142.857142857px!important;zoom:1!important;flex:0 0 142.857142857px!important;margin:0!important;overflow:visible!important;--portrait-size:56%}
+.profile-summary .profile-identity .profile-equipped-frame .shop-frame-avatar>.user-avatar{width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;object-fit:cover!important;box-sizing:border-box}

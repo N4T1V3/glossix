@@ -1,0 +1,12 @@
+.profile-summary{position:relative}
+.profile-summary>.banner-edge-blend{position:absolute;left:0;right:0;height:30px;overflow:hidden;pointer-events:none;z-index:2;mask-image:linear-gradient(#000,transparent);-webkit-mask-image:linear-gradient(#000,transparent)}
+.banner-edge-blend>div{position:absolute;top:0;left:0;width:100%;transform:scaleY(-1);filter:blur(2px)}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body:before{display:none!important}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-body{box-shadow:none!important}
+.shop-actual-profile .profile-summary[class*="design-shop-"] .profile-cover:after{display:none!important}
+
+/* Identity and its complete avatar frame sit above the decorative edge fade. */
+.profile-summary .profile-body{position:relative}
+.profile-summary .profile-identity{position:relative;z-index:3!important;overflow:visible}
+.profile-summary .profile-identity .avatar-frame{flex-shrink:0;overflow:visible}
+.profile-summary .profile-identity .user-avatar{object-fit:cover}

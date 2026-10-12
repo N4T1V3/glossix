@@ -1,0 +1,91 @@
+{
+  "checked": "2026-10-09",
+  "liveRecovered": 1232,
+  "fetchErrors": 167,
+  "ruEntries": 91065,
+  "ruUnresolved": 1489,
+  "ruDirect_en": 89576,
+  "ruDirect_fr": 17222,
+  "ruDirect_es": 13299,
+  "ruDirect_de": 88570,
+  "ruDirect_pt": 7510,
+  "itEntries": 27029,
+  "itUnresolved": 0,
+  "itDirect_en": 27029,
+  "itDirect_fr": 7279,
+  "itDirect_es": 12670,
+  "itDirect_de": 7318,
+  "itDirect_pt": 11325,
+  "ruCrossreferencesResolved": 270,
+  "livePageRecovered": 3,
+  "courseChecks": [
+    {
+      "language": "fr",
+      "courseMeaningStrings": 1465,
+      "missingCourseMeanings": [],
+      "emptyValues": [],
+      "coreCorrections": 8,
+      "compositeExplanations": 884,
+      "protectedItalianExplanations": 1,
+      "remainingStatus": "Machine-translated course explanations need editorial review; reference dictionary meanings use direct sources."
+    },
+    {
+      "language": "es",
+      "courseMeaningStrings": 1465,
+      "missingCourseMeanings": [],
+      "emptyValues": [],
+      "coreCorrections": 8,
+      "compositeExplanations": 884,
+      "protectedItalianExplanations": 2,
+      "remainingStatus": "Machine-translated course explanations need editorial review; reference dictionary meanings use direct sources."
+    },
+    {
+      "language": "de",
+      "courseMeaningStrings": 1465,
+      "missingCourseMeanings": [],
+      "emptyValues": [],
+      "coreCorrections": 6,
+      "compositeExplanations": 884,
+      "protectedItalianExplanations": 1,
+      "remainingStatus": "Machine-translated course explanations need editorial review; reference dictionary meanings use direct sources."
+    },
+    {
+      "language": "pt",
+      "courseMeaningStrings": 1465,
+      "missingCourseMeanings": [],
+      "emptyValues": [],
+      "coreCorrections": 5,
+      "compositeExplanations": 884,
+      "protectedItalianExplanations": 2,
+      "remainingStatus": "Machine-translated course explanations need editorial review; reference dictionary meanings use direct sources."
+    }
+  ],
+  "russianReview": {
+    "total": 1489,
+    "actions": {
+      "Archive removal candidate": 1118,
+      "Archive variant": 10,
+      "Archive non-Russian entry": 1,
+      "Archive user removed": 70,
+      "Accepted by user": 185,
+      "Archive very rare entry": 90,
+      "Archive duplicate entry": 15
+    },
+    "frequencySource": "wordfreq 3.1.1, data through approximately 2021",
+    "frequencyRule": "Zipf is estimated frequency, not a guarantee. Zero means absent from corpus, not never used. Adjective inflections and е/ё spellings are checked.",
+    "status": "Draft interpretations must be reviewed before becoming practice answers.",
+    "glossixInterpretations": 90,
+    "remainingEntries": 185,
+    "deepLChecked": 1374,
+    "userReviewed": 14,
+    "newDuplicateArchives": 15,
+    "acceptedEveryday": 104,
+    "pendingKept": 151,
+    "removedCandidates": 1118,
+    "acceptedByUser": 185,
+    "removedByUser": 70,
+    "practiceReady": 181,
+    "pendingMeaning": 4,
+    "reviewComplete": true
+  }
+}
