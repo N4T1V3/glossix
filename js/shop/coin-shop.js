@@ -10,6 +10,27 @@
   if(i.kind==='design')profileDesigns.push({id:i.cosmetic_id,name:i.name,level:1000000000});
   if(i.kind==='leaderboard')leaderboardThemes.push({id:i.cosmetic_id,name:i.name,level:1000000000});
  }
+
+ // Shop cosmetics are purchased, rather than unlocked through level milestones.
+ function shopPickerLabels(html,p,attribute,kind){
+  const template=document.createElement('template');template.innerHTML=html;
+  for(const button of template.content.querySelectorAll('['+attribute+']')){
+   const id=button.getAttribute(attribute),item=GLOSSIX_SHOP_ITEMS.find(i=>i.kind===kind&&i.cosmetic_id===id);if(!item)continue;
+   const owned=(p?.granted_items||[]).includes(item.item_id)||stock.some(i=>i.item_id===item.item_id&&i.owned)||button.getAttribute('aria-pressed')==='true';
+   let label=button.querySelector('small')||button.querySelector(':scope > span:last-child:not(.avatar-frame):not(.banner-swatch)');
+   if(kind==='avatar'||!label){label=document.createElement('small');button.append(label);}
+   label.textContent=owned?(button.getAttribute('aria-pressed')==='true'?'Selected':'Owned'):'Visit shop';
+   button.disabled=false;
+   if(!owned){button.removeAttribute(attribute);button.setAttribute('data-page','shop');button.setAttribute('aria-label',item.name+' · Visit shop');button.removeAttribute('aria-pressed');}
+  }
+  return template.innerHTML;
+ }
+ const baseAvatarPicker=avatarPicker;avatarPicker=function(id,mode){return shopPickerLabels(baseAvatarPicker(id,mode),typeof inlineProfile!=='undefined'?inlineProfile:null,'data-avatar-id','avatar');};
+ const baseBannerPicker=bannerPicker;bannerPicker=p=>shopPickerLabels(baseBannerPicker(p),p,'data-banner-id','banner');
+ const baseDesignPicker=designPicker;designPicker=p=>shopPickerLabels(baseDesignPicker(p),p,'data-design-id','design');
+ const baseBorderPicker=avatarBorderPicker;avatarBorderPicker=p=>shopPickerLabels(baseBorderPicker(p),p,'data-avatar-border','avatar-border');
+ const baseLeaderboardPicker=leaderboardDesignPicker;leaderboardDesignPicker=p=>shopPickerLabels(baseLeaderboardPicker(p),p,'data-board-design','leaderboard');
+
  const oldAvatar=profileAvatar;
  profileAvatar=function(p){const i=GLOSSIX_SHOP_ITEMS.find(i=>i.kind==='avatar-border'&&i.cosmetic_id===p.border_id);if(!i)return oldAvatar(p);return '<span class="shop-frame-preview profile-equipped-frame" data-border="'+i.cosmetic_id+'"><span class="shop-frame-avatar">'+avatarImage(p.avatar_id)+'</span><img class="shop-frame-overlay" src="'+i.image+'" alt="'+esc(i.name)+' border"></span>';};
  const oldRow=leaderboardRowClass;leaderboardRowClass=p=>GLOSSIX_SHOP_ITEMS.some(i=>i.kind==='leaderboard'&&i.cosmetic_id===p.leaderboard_design)?'board-design board-design-'+p.leaderboard_design:oldRow(p);

@@ -15,6 +15,7 @@ async function renderSocial(){
       const sections=[['incoming','Friend requests'],['outgoing','Requests you sent'],['friend','Your friends']];
       renderCompactFriends(p,rows);
     }else{
+      if(boardScope==='teams'){const rows=await GlossixOnline.rpc('glossix_team_leaderboard',{p_period:boardPeriod});if(serial===socialSerial&&page==='leaderboard'&&GlossixOnline.user()?.id===user.id)renderTeamBoard(rows);return;}
       const rows=await GlossixOnline.rpc('glossix_leaderboard_languages',{p_scope:boardScope,p_period:boardPeriod});try{const owners=new Set(await GlossixOnline.rpc('glossix_owner_badges',{p_user_ids:rows.map(r=>r.user_id)}));rows.forEach(r=>r.owner_badge=owners.has(r.user_id));}catch{rows.forEach(r=>r.owner_badge=false);}if(serial!==socialSerial||page!=='leaderboard'||GlossixOnline.user()?.id!==user.id)return;
       renderCompactBoard(p,rows);
     }

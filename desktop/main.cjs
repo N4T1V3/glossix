@@ -21,7 +21,7 @@ app.whenReady().then(()=>{
  const win=new BrowserWindow({width:1360,height:900,minWidth:420,minHeight:650,title:'Glossix · Language studio',icon:path.join(require('node:path').resolve(__dirname,'..'),'assets','glossix-icon.png'),backgroundColor:'#f5f4ee',webPreferences:{preload:path.join(require('node:path').resolve(__dirname,'..'),'desktop/preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
  mainWindow=win;authProtocol.bindWindow(win);
  const security=require('./security.cjs').setupSecurity({app,ipcMain,session:session.defaultSession,dialog,safeStorage,getWindow:()=>win});
- win.webContents.setWindowOpenHandler(()=>({action:'deny'}));
+ win.webContents.setWindowOpenHandler(({url})=>{if(url==='https://discord.gg/cgJtQxbwsa')require('electron').shell.openExternal(url).catch(()=>dialog.showErrorBox('Could not open Discord','Open https://discord.gg/cgJtQxbwsa in your browser.'));return {action:'deny'};});
  win.webContents.on('will-navigate',(event,url)=>{if(!security.trustedUrl(url))event.preventDefault();});
  win.loadFile('index.html');
  require('./updater.cjs').setupUpdater({app,ipcMain,dialog,getWindow:()=>win});
