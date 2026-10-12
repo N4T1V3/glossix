@@ -20,6 +20,9 @@ function setupSecurity({app,ipcMain,session,dialog,safeStorage,getWindow}){
   if(!approved){try{const result=await dialog.showMessageBox(w,{type:'question',title:'Allow microphone?',message:'Allow Glossix to record your pronunciation?',detail:'Recordings are played back on this device. Camera access is disabled.',buttons:['Allow microphone','Cancel'],defaultId:1,cancelId:1,noLink:true});approved=result.response===0}catch{approved=false}}
   callback(approved);
  });
- return {trustedUrl};
+ let pendingCheckpoint=null;
+ ipcMain.on('auth:checkpoint-result',(event,nonce,ok)=>{if(!trusted(event)||!pendingCheckpoint||pendingCheckpoint.nonce!==nonce)return;const pending=pendingCheckpoint;pendingCheckpoint=null;clearTimeout(pending.timer);pending.resolve(ok===true);});
+ const checkpoint=()=>new Promise(resolve=>{if(pendingCheckpoint){resolve(false);return;}const win=getWindow();if(!win||win.isDestroyed()){resolve(false);return;}const nonce=require('node:crypto').randomUUID();const timer=setTimeout(()=>{pendingCheckpoint=null;resolve(false);},25000);pendingCheckpoint={nonce,timer,resolve};win.webContents.send('auth:checkpoint',nonce);});
+ return {trustedUrl,checkpoint};
 }
 module.exports={setupSecurity};

@@ -1,5 +1,5 @@
 const fs=require('node:fs'),path=require('node:path');
-function setupUpdater({app,ipcMain,dialog,getWindow,platform=process.platform,resourcesPath=process.resourcesPath,loadUpdater=()=>require('electron-updater').autoUpdater}){
+function setupUpdater({app,ipcMain,dialog,getWindow,platform=process.platform,resourcesPath=process.resourcesPath,beforeInstall=async()=>true,loadUpdater=()=>require('electron-updater').autoUpdater}){
  let updater,busy=false,installBusy=false,state={status:'unavailable',version:app.getVersion(),message:'Automatic updates are available in the installed Windows app.'};
  const emit=patch=>{state={...state,...patch};const win=getWindow();if(win&&!win.isDestroyed())win.webContents.send('updates:status',state);return {...state};};
  const trusted=event=>{const win=getWindow();if(!win||event.sender!==win.webContents||event.senderFrame&&event.senderFrame!==win.webContents.mainFrame)throw Error('Update request is not allowed.');};
@@ -19,7 +19,7 @@ function setupUpdater({app,ipcMain,dialog,getWindow,platform=process.platform,re
  }else if(config.owner)emit({status:'unavailable',message:'Use the Glossix Windows installer to enable automatic updates. Browser previews and portable copies do not install updates.'});
  ipcMain.handle('updates:status',event=>{trusted(event);return {...state};});
  ipcMain.handle('updates:check',event=>{trusted(event);return check();});
- ipcMain.handle('updates:install',async event=>{trusted(event);if(!updater||state.status!=='downloaded'||installBusy)return {...state};installBusy=true;try{const win=getWindow();const answer=await dialog.showMessageBox(win,{type:'question',title:'Install Glossix update',message:`Restart and install Glossix ${state.nextVersion}?`,detail:'Finish your current activity first. Glossix will close and reopen after the update.',buttons:['Restart and install','Later'],defaultId:1,cancelId:1,noLink:true});if(answer.response===0&&state.status==='downloaded'){updater.quitAndInstall(false,true);}return {...state};}finally{installBusy=false;}});
+ ipcMain.handle('updates:install',async event=>{trusted(event);if(!updater||state.status!=='downloaded'||installBusy)return {...state};installBusy=true;try{const win=getWindow();const answer=await dialog.showMessageBox(win,{type:'question',title:'Install Glossix update',message:`Restart and install Glossix ${state.nextVersion}?`,detail:'Finish your current activity first. Glossix will close and reopen after the update.',buttons:['Restart and install','Later'],defaultId:1,cancelId:1,noLink:true});if(answer.response===0&&state.status==='downloaded'){if(await beforeInstall()){updater.quitAndInstall(true,true);}else{emit({status:'downloaded',message:'Could not safely save your sign-in. Restart was cancelled. Please try the update again.'});}}return {...state};}finally{installBusy=false;}});
  return {getState:()=>({...state}),check};
 }
 module.exports={setupUpdater};

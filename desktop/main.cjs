@@ -9,6 +9,7 @@ ipcMain.handle('speech',async(_,payload)=>{
 });
 // Retain the established profile directory so the rename preserves desktop progress.
 app.setPath('userData',path.join(app.getPath('appData'),'lingua-studio'));
+app.setPath('sessionData',app.getPath('userData'));
 // Chromium may alter second-instance commandLine; preserve the original link explicitly.
 const accountLink=process.argv.find(value=>typeof value==='string'&&value.startsWith('glossix:')&&value.length<=16384);
 const hasInstanceLock=!app.requestSingleInstanceLock||app.requestSingleInstanceLock({accountLink:accountLink||''});
@@ -24,6 +25,6 @@ app.whenReady().then(()=>{
  win.webContents.setWindowOpenHandler(({url})=>{if(url==='https://discord.gg/cgJtQxbwsa')require('electron').shell.openExternal(url).catch(()=>dialog.showErrorBox('Could not open Discord','Open https://discord.gg/cgJtQxbwsa in your browser.'));return {action:'deny'};});
  win.webContents.on('will-navigate',(event,url)=>{if(!security.trustedUrl(url))event.preventDefault();});
  win.loadFile('index.html');
- require('./updater.cjs').setupUpdater({app,ipcMain,dialog,getWindow:()=>win});
+ require('./updater.cjs').setupUpdater({app,ipcMain,dialog,getWindow:()=>win,beforeInstall:()=>security.checkpoint()});
 });
 app.on('window-all-closed',()=>app.quit());
