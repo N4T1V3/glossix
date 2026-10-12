@@ -1,6 +1,6 @@
 {
   "name": "glossix-studio",
-  "version": "0.2.56",
+  "version": "0.2.57",
   "description": "Beginner language learning studio",
   "main": "desktop/main.cjs",
   "scripts": {
