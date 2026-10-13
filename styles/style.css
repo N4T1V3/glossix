@@ -184,51 +184,51 @@ aside>.course{margin:26px 0 0}aside>.spoken-course{margin:18px 0 20px}.spoken-co
 .spoken-language-label{display:block;margin:20px 0 10px;font-weight:500}#spoken-language{display:block;max-width:100%;min-width:225px}
 
 /* Fifty designed profile banners */
-.banner-ripple{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("assets/banners/ripple.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-sunrise{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("assets/banners/sunrise.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-petals{--banner-glow:#ffaacf;background-color:#452751;background-image:url("assets/banners/petals.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-meadow{--banner-glow:#91e896;background-color:#143e28;background-image:url("assets/banners/meadow.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-ocean-waves{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("assets/banners/ocean-waves.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-violet-arcs{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("assets/banners/violet-arcs.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-citrus-rays{--banner-glow:#ffdc57;background-color:#58420c;background-image:url("assets/banners/citrus-rays.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-blueprint{--banner-glow:#67defc;background-color:#103e57;background-image:url("assets/banners/blueprint.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-coral-ribbons{--banner-glow:#ffa7a0;background-color:#652c42;background-image:url("assets/banners/coral-ribbons.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-mint-mosaic{--banner-glow:#a5f5d4;background-color:#15483d;background-image:url("assets/banners/mint-mosaic.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-orchid-lace{--banner-glow:#ea99fc;background-color:#472559;background-image:url("assets/banners/orchid-lace.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-ember-peaks{--banner-glow:#ff9963;background-color:#512215;background-image:url("assets/banners/ember-peaks.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-forest-canopy{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("assets/banners/forest-canopy.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-moon-garden{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("assets/banners/moon-garden.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-prism-trails{--banner-glow:#ffaacf;background-color:#452751;background-image:url("assets/banners/prism-trails.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-tidal-orbits{--banner-glow:#91e896;background-color:#143e28;background-image:url("assets/banners/tidal-orbits.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-copper-weave{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("assets/banners/copper-weave.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-starlight{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("assets/banners/starlight.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-crimson-facets{--banner-glow:#ffdc57;background-color:#58420c;background-image:url("assets/banners/crimson-facets.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-bronze{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("assets/banners/bronze.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-emerald-vault{--banner-glow:#ffa7a0;background-color:#652c42;background-image:url("assets/banners/emerald-vault.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-neon-circuit{--banner-glow:#a5f5d4;background-color:#15483d;background-image:url("assets/banners/neon-circuit.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-glacier-crown{--banner-glow:#ea99fc;background-color:#472559;background-image:url("assets/banners/glacier-crown.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-peacock-fan{--banner-glow:#ff9963;background-color:#512215;background-image:url("assets/banners/peacock-fan.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-amethyst-mandala{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("assets/banners/amethyst-mandala.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-celestial-map{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("assets/banners/celestial-map.svg");background-size:100% 100%;background-repeat:no-repeat}
-.banner-silver{--banner-glow:#d8f7ff;background-color:#253c4e;background-image:url("assets/banners/silver.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-ripple{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("../assets/banners/ripple.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-sunrise{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("../assets/banners/sunrise.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-petals{--banner-glow:#ffaacf;background-color:#452751;background-image:url("../assets/banners/petals.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-meadow{--banner-glow:#91e896;background-color:#143e28;background-image:url("../assets/banners/meadow.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-ocean-waves{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("../assets/banners/ocean-waves.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-violet-arcs{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("../assets/banners/violet-arcs.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-citrus-rays{--banner-glow:#ffdc57;background-color:#58420c;background-image:url("../assets/banners/citrus-rays.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-blueprint{--banner-glow:#67defc;background-color:#103e57;background-image:url("../assets/banners/blueprint.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-coral-ribbons{--banner-glow:#ffa7a0;background-color:#652c42;background-image:url("../assets/banners/coral-ribbons.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-mint-mosaic{--banner-glow:#a5f5d4;background-color:#15483d;background-image:url("../assets/banners/mint-mosaic.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-orchid-lace{--banner-glow:#ea99fc;background-color:#472559;background-image:url("../assets/banners/orchid-lace.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-ember-peaks{--banner-glow:#ff9963;background-color:#512215;background-image:url("../assets/banners/ember-peaks.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-forest-canopy{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("../assets/banners/forest-canopy.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-moon-garden{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("../assets/banners/moon-garden.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-prism-trails{--banner-glow:#ffaacf;background-color:#452751;background-image:url("../assets/banners/prism-trails.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-tidal-orbits{--banner-glow:#91e896;background-color:#143e28;background-image:url("../assets/banners/tidal-orbits.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-copper-weave{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("../assets/banners/copper-weave.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-starlight{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("../assets/banners/starlight.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-crimson-facets{--banner-glow:#ffdc57;background-color:#58420c;background-image:url("../assets/banners/crimson-facets.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-bronze{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("../assets/banners/bronze.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-emerald-vault{--banner-glow:#ffa7a0;background-color:#652c42;background-image:url("../assets/banners/emerald-vault.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-neon-circuit{--banner-glow:#a5f5d4;background-color:#15483d;background-image:url("../assets/banners/neon-circuit.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-glacier-crown{--banner-glow:#ea99fc;background-color:#472559;background-image:url("../assets/banners/glacier-crown.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-peacock-fan{--banner-glow:#ff9963;background-color:#512215;background-image:url("../assets/banners/peacock-fan.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-amethyst-mandala{--banner-glow:#44dfd2;background-color:#143e4b;background-image:url("../assets/banners/amethyst-mandala.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-celestial-map{--banner-glow:#ffc47d;background-color:#65263c;background-image:url("../assets/banners/celestial-map.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
+.banner-silver{--banner-glow:#d8f7ff;background-color:#253c4e;background-image:url("../assets/banners/silver.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-silver::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#d8f7ff44,transparent 55%);background-size:160% 160%;animation:banner-shimmer 46s ease-in-out infinite alternate}
-.banner-aurora{--banner-glow:#91e896;background-color:#143e28;background-image:url("assets/banners/aurora.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-aurora{--banner-glow:#91e896;background-color:#143e28;background-image:url("../assets/banners/aurora.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-aurora::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#91e89644,transparent 55%);background-size:160% 160%;animation:banner-shimmer 47s ease-in-out infinite alternate}
-.banner-sapphire{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("assets/banners/sapphire.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-sapphire{--banner-glow:#65c9ff;background-color:#102f59;background-image:url("../assets/banners/sapphire.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-sapphire::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#65c9ff44,transparent 55%);background-size:160% 160%;animation:banner-shimmer 48s ease-in-out infinite alternate}
-.banner-obsidian{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("assets/banners/obsidian.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-obsidian{--banner-glow:#cf9bff;background-color:#35205c;background-image:url("../assets/banners/obsidian.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-obsidian::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#cf9bff44,transparent 55%);background-size:160% 160%;animation:banner-shimmer 49s ease-in-out infinite alternate}
-.banner-opal{--banner-glow:#d8f7ff;background-color:#253c4e;background-image:url("assets/banners/opal.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-opal{--banner-glow:#d8f7ff;background-color:#253c4e;background-image:url("../assets/banners/opal.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-opal::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#d8f7ff44,transparent 55%);background-size:160% 160%;animation:banner-shimmer 50s ease-in-out infinite alternate}
-.banner-gold{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("assets/banners/gold.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-gold{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("../assets/banners/gold.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-gold::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#f5cf7344,transparent 55%);background-size:160% 160%;animation:banner-shimmer 51s ease-in-out infinite alternate}
-.banner-rose-gold{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("assets/banners/rose-gold.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-rose-gold{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("../assets/banners/rose-gold.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-rose-gold::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#f5cf7344,transparent 55%);background-size:160% 160%;animation:banner-shimmer 52s ease-in-out infinite alternate}
-.banner-solar{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("assets/banners/solar.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-solar{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("../assets/banners/solar.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-solar::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#f5cf7344,transparent 55%);background-size:160% 160%;animation:banner-shimmer 53s ease-in-out infinite alternate}
-.banner-cosmos{--banner-glow:#ea99fc;background-color:#472559;background-image:url("assets/banners/cosmos.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-cosmos{--banner-glow:#ea99fc;background-color:#472559;background-image:url("../assets/banners/cosmos.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-cosmos::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#ea99fc44,transparent 55%);background-size:160% 160%;animation:banner-shimmer 54s ease-in-out infinite alternate}
-.banner-legend{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("assets/banners/legend.svg");background-size:100% 100%;background-repeat:no-repeat}
+.banner-legend{--banner-glow:#f5cf73;background-color:#2b202a;background-image:url("../assets/banners/legend.webp?v=156");background-size:100% 100%;background-repeat:no-repeat}
 .profile-cover.banner-legend::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 30%,#f5cf7344,transparent 55%);background-size:160% 160%;animation:banner-shimmer 55s ease-in-out infinite alternate}
 .profile-cover{position:relative;overflow:hidden}.profile-cover>.eyebrow{position:relative;z-index:2;text-shadow:0 1px 5px #0008}.banner-swatch{background-size:100% 100%}@keyframes banner-shimmer{from{background-position:0% 0%}to{background-position:100% 100%}}@media(prefers-reduced-motion:reduce){.profile-cover::after{animation:none!important}}
 
@@ -690,3 +690,10 @@ main:has(#support-content) .discord-invite-button{font-size:12px;padding:9px 12p
 @media(max-width:1050px){body.team-chat-expanded main:has(#support-content){height:42dvh;max-height:42dvh;padding-bottom:12px}body.team-chat-expanded main:has(#support-content) #view>p,body.team-chat-expanded main:has(#support-content) .discord-support,body.team-chat-expanded main:has(#support-content) #view>.eyebrow{display:none}}
 
 .team-handshake-icon{width:20px;height:20px;display:block;color:inherit}aside nav i:has(.team-handshake-icon){display:grid;place-items:center}
+
+/* Matching owner support actions, including compact profile layouts. */
+.owner-support-actions{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}.owner-support-actions>button,.owner-support-actions>.discord-invite-button{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:42px;margin:0;padding:10px 14px;font-size:14px;line-height:20px;font-weight:600;border:0;border-radius:12px;text-decoration:none}
+
+@media(min-width:1001px){.dictionary-book-controls{grid-template-columns:minmax(180px,2fr) minmax(140px,1.2fr) minmax(110px,1fr) minmax(110px,1fr) minmax(130px,1.1fr)}}
+
+.learning-content-update{padding:10px 14px;margin:10px 0}.learning-content-update summary{cursor:pointer;font-size:13px;font-weight:600}.learning-content-update p{font-size:13px}.learning-content-update .actions{flex-wrap:wrap}

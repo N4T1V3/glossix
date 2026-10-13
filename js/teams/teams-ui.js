@@ -1,4 +1,3 @@
-window.glossixTeamIcon=function(i={}){const paths={shield:'M8 5H40V22Q40 36 24 44Q8 36 8 22Z',circle:'M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4',diamond:'M24 3L45 24L24 45L3 24Z',hexagon:'M14 5H34L45 24L34 43H14L3 24Z',star:'M24 3L30 17L45 18L34 28L38 44L24 36L10 44L14 28L3 18L18 17Z',square:'M5 5H43V43H5Z'},c=(v,f)=>/^#[0-9a-f]{6}$/i.test(v)?v:f;return `<svg class="team-custom-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="${paths[i.shape]||paths.shield}" fill="${c(i.colour,'#287568')}" stroke="${c(i.accent,'#ffffff')}" stroke-width="3" stroke-linejoin="round"/><path d="M17 24L22 29L32 19" fill="none" stroke="${c(i.accent,'#ffffff')}" stroke-width="3"/></svg>`;};
 (()=>{
  let state=null,serial=0,poll=0,busy=false,search='',chatSignature='',friendRows=[],activity=null,dashboard={},tab='overview',joinMode='',selected=null,chatOpen=false;
  const role=r=>esc(state?.team?.rank_names?.[r]||({leader:'Leader',moderator:'Moderator',member:'Member'}[r]||r));

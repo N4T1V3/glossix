@@ -1609,7 +1609,7 @@ window.ITALIAN_VISUALS=[
     "id": "taxi",
     "title": "Taking a taxi",
     "group": "Travel",
-    "image": "assets/scenes/taxi.webp",
+    "image": "assets/scenes/taxi.webp?v=156",
     "objects": [
       {
         "id": "it-word-268",
