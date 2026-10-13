@@ -36,7 +36,21 @@ jobs:
           if (!$status.AMServiceEnabled -or !$status.AntivirusEnabled) {
             throw 'Microsoft Defender is unavailable on this runner; no scan was completed.'
           }
-          Update-MpSignature
+          # Try both official sources; do not publish without a successful update and scan.
+          $definitionsUpdated = $false
+          foreach ($source in @('MicrosoftUpdateServer', 'MMPC', 'MicrosoftUpdateServer', 'MMPC')) {
+            try {
+              Update-MpSignature -UpdateSource $source -ErrorAction Stop
+              $definitionsUpdated = $true
+              break
+            } catch {
+              Write-Warning "Defender definition update failed using ${source}: $($_.Exception.Message)"
+              Start-Sleep -Seconds 10
+            }
+          }
+          if (!$definitionsUpdated) {
+            throw 'Defender definitions could not be updated after four attempts. No release was uploaded. Start a new workflow run to retry on a fresh runner.'
+          }
           $scanner = Get-ChildItem "$env:ProgramData/Microsoft/Windows Defender/Platform/*/MpCmdRun.exe" |
             Sort-Object LastWriteTime -Descending | Select-Object -First 1
           if (!$scanner) { throw 'Microsoft Defender scanner was not found.' }
