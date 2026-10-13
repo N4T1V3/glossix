@@ -4,7 +4,7 @@ function setupUpdater({app,ipcMain,dialog,getWindow,platform=process.platform,re
  const emit=patch=>{state={...state,...patch};const win=getWindow();if(win&&!win.isDestroyed())win.webContents.send('updates:status',state);return {...state};};
  const trusted=event=>{const win=getWindow();if(!win||event.sender!==win.webContents||event.senderFrame&&event.senderFrame!==win.webContents.mainFrame)throw Error('Update request is not allowed.');};
  const check=async()=>{if(!updater||busy||state.status==='downloaded'||state.status==='downloading')return {...state};busy=true;try{await updater.checkForUpdates();}catch{emit({status:'error',message:'Updates could not be checked. Check your connection and try again.'});}finally{busy=false;}return {...state};};
- let config={};try{config=JSON.parse(fs.readFileSync(path.join(__dirname,'update-config.json'),'utf8'));}catch{}
+ let config={};try{config=JSON.parse(fs.readFileSync(path.join(__dirname,'..','update-config.json'),'utf8'));}catch{}
  if(!/^[a-zA-Z0-9][a-zA-Z0-9-]{0,38}$/.test(config.owner||'')||!/^[a-zA-Z0-9_.-]{1,100}$/.test(config.repo||''))emit({status:'not-configured',message:'Automatic updates are not connected yet. A GitHub release repository must be configured.'});
  else if(platform==='win32'&&app.isPackaged&&resourcesPath&&fs.existsSync(path.join(resourcesPath,'app-update.yml'))&&app.getPath?.('exe')&&fs.existsSync(path.join(path.dirname(app.getPath('exe')),'Uninstall Glossix.exe'))){
   try{updater=loadUpdater();updater.autoDownload=true;updater.autoInstallOnAppQuit=false;updater.allowPrerelease=false;updater.allowDowngrade=false;

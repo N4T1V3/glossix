@@ -2,16 +2,16 @@ const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('n
 function setupSecurity({app,ipcMain,session,dialog,safeStorage,getWindow}){
  const entry=pathToFileURL(path.join(require('node:path').resolve(__dirname,'..'),'index.html')).href;
  const trustedUrl=url=>{try{const u=new URL(url);u.hash='';u.search='';return u.href===entry}catch{return false}};
- const trusted=e=>{const w=getWindow();return !!w&&e.sender===w.webContents&&e.senderFrame===w.webContents.mainFrame&&trustedUrl(e.senderFrame.url)};
+ const trusted=e=>{const w=getWindow(),frame=e.senderFrame,main=w?.webContents.mainFrame;const sameFrame=frame&&main&&(frame===main||(Number.isInteger(frame.processId)&&Number.isInteger(frame.routingId)&&frame.processId===main.processId&&frame.routingId===main.routingId));return !!w&&e.sender===w.webContents&&sameFrame&&trustedUrl(frame.url)};
  const target=path.join(app.getPath('userData'),'session.encrypted');
  ipcMain.on('auth:storage',(event,action,value)=>{
-  event.returnValue={ok:false};if(!trusted(event))return;
+  event.returnValue={ok:false,error:'Session storage request was rejected by the app security check.'};if(!trusted(event))return;
   try{if(action==='remove'){fs.rmSync(target,{force:true});event.returnValue={ok:true};return;}
-   if(!safeStorage.isEncryptionAvailable())return;
+   if(!safeStorage.isEncryptionAvailable()){event.returnValue={ok:false,error:'Windows secure encryption is unavailable.'};return;}
    if(action==='get'){event.returnValue={ok:true,value:fs.existsSync(target)?safeStorage.decryptString(fs.readFileSync(target)):null};return;}
    if(action==='set'&&typeof value==='string'&&value.length<65536){const data=JSON.parse(value);if(typeof data.access_token!=='string'||typeof data.refresh_token!=='string'||typeof data.user?.id!=='string'||!Number.isFinite(data.expires_at))return;
     fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target+'.tmp',safeStorage.encryptString(value));fs.renameSync(target+'.tmp',target);event.returnValue={ok:true};}
-  }catch{event.returnValue={ok:false};}
+  }catch(error){const code=['EACCES','EPERM','EBUSY','ENOSPC','EROFS'].includes(error.code)?error.code:'secure-storage';event.returnValue={ok:false,error:'Could not save or read the encrypted sign-in ('+code+').'};}
  });
  let approved=false;
  session.setPermissionCheckHandler((wc,permission,origin,details)=>{const w=getWindow();return !!w&&wc===w.webContents&&permission==='media'&&details.mediaType==='audio'&&trustedUrl(details.requestingUrl||wc.getURL());});
