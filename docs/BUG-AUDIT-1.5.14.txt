@@ -1,0 +1,14 @@
+Glossix 1.5.14 audit
+
+Confirmed fixes:
+- A failed installer now releases the account-refresh lock without requiring an app restart.
+- Background/manual update checks cannot replace the updater state during session-saving or installation.
+- Installer errors retain the downloaded update and show the retry state.
+
+Validation:
+62 packaged JavaScript files passed syntax checking.
+No missing local HTML/CSS asset references were found.
+Passed focused tests: updater cancellation/recovery, feedback, secure-session checks, token refresh/persistence, dictionary deduplication/types, all seven number/gender expansions and progress preservation, password recovery, session retention, lesson resume, owner-support checks.
+Three legacy test harnesses are incompatible with current interfaces (lesson retry timer, language registry mock, team DOM mock); they are not counted as passes.
+
+Limits: no installed Windows installer/relaunch test, live Discord delivery test, or live Supabase migration was performed. No claim that the whole app is bug-free.

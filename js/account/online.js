@@ -36,6 +36,7 @@
       user:()=>session?.user||null,
       sessionSaved:()=>saved,
       sessionSaveError:()=>saveError,
+      cancelUpdate:()=>{updating=false;},
       prepareUpdate:async()=>{updating=true;try{if(refreshing)await refreshing.catch(()=>{});persist();if(session&&!saved)throw Error('Could not save sign-in before updating.');return true;}catch(error){updating=false;throw error;}},
       signIn:async(email,password)=>accept(await request('token?grant_type=password',{email,password})),
       signUp:async(email,password,name)=>accept(await request('signup',{email,password,data:{display_name:name}})),
@@ -96,6 +97,6 @@
     };
   }
   if(typeof module!=='undefined')module.exports={createClient,config};
-  else {root.GlossixOnline=createClient();root.desktop?.authStorage?.beforeUpdate?.(()=>root.GlossixOnline.prepareUpdate());}
+  else {root.GlossixOnline=createClient();root.desktop?.authStorage?.beforeUpdate?.(()=>root.GlossixOnline.prepareUpdate(),()=>root.GlossixOnline.cancelUpdate());}
 })(typeof window!=='undefined'?window:globalThis);
 
