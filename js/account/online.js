@@ -11,7 +11,7 @@
   }
   function createClient(fetchImpl=fetch,storage=defaultStorage()){
     let session=null,refreshing=null,saved=false,saveError=null,updating=false,recovery=null,recoverySerial=0;
-    function persist(){saveError=null;try{if(storage){if(session)storage.setItem(sessionKey,JSON.stringify(session));else storage.removeItem(sessionKey);saved=!!session;}else saved=false;}catch(error){saved=false;saveError=error.message;}}
+    function persist(){saveError=null;try{if(storage){if(session)storage.setItem(sessionKey,JSON.stringify(session));else storage.removeItem(sessionKey);saved=!!session;}else{saved=false;saveError='Device storage is unavailable.';}}catch(error){saved=false;saveError=error.message;}}
     try{const stored=JSON.parse(storage?.getItem(sessionKey)||'null');if(stored&&typeof stored.access_token==='string'&&typeof stored.refresh_token==='string'&&typeof stored.user?.id==='string'&&Number.isFinite(stored.expires_at)){session=stored;saved=true;}else if(stored)storage?.removeItem(sessionKey);}catch{/* A temporary storage read error must not delete a saved session. */}
     async function request(path,body,token,method='POST'){
       let response;
@@ -36,6 +36,7 @@
       user:()=>session?.user||null,
       sessionSaved:()=>saved,
       sessionSaveError:()=>saveError,
+      retrySessionSave:()=>{persist();return saved;},
       cancelUpdate:()=>{updating=false;},
       prepareUpdate:async()=>{updating=true;try{if(refreshing)await refreshing.catch(()=>{});persist();if(session&&!saved)throw Error('Could not save sign-in before updating.');return true;}catch(error){updating=false;throw error;}},
       signIn:async(email,password)=>accept(await request('token?grant_type=password',{email,password})),
