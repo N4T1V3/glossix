@@ -9,3 +9,12 @@
 #icon-art [data-icon-layer]{cursor:grab;pointer-events:visiblePainted}#icon-art.dragging,#icon-art.dragging [data-icon-layer]{cursor:grabbing}#icon-art .icon-layer-selected{filter:drop-shadow(0 0 .6px #06a6dd)}
 
 .team-board-identity{display:flex;align-items:center;gap:10px}.team-board-identity .team-custom-icon{width:32px;height:32px}
+
+/* Keep point/status notifications clear of the visible team chat. */
+#toast{z-index:80}
+body:has(#team-chat-dock) #toast{bottom:92px}
+body.team-chat-expanded:has(#team-chat-panel) #toast{right:468px;bottom:24px;max-width:min(450px,calc(100vw - 498px))}
+@media(max-width:1050px){
+ body:has(#team-chat-dock) #toast{right:12px;max-width:calc(100vw - 24px)}
+ body.team-chat-expanded:has(#team-chat-panel) #toast{right:12px;bottom:calc(55dvh + 22px);max-width:calc(100vw - 24px)}
+}
