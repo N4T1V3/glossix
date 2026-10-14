@@ -27,6 +27,7 @@ jobs:
       - name: Build the Windows installer and update metadata
         run: npm run dist:win -- --config.directories.output=release
       - name: Scan installer and record publisher signature
+        timeout-minutes: 10
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
@@ -49,8 +50,22 @@ jobs:
             }
           }
           if (!$definitionsUpdated) {
-            throw 'Defender definitions could not be updated after four attempts. No release was uploaded. Start a new workflow run to retry on a fresh runner.'
+            Write-Host 'Trying Microsoft standalone security intelligence package.'
+            $definitionPackage = Join-Path $env:RUNNER_TEMP 'glossix-defender-definitions.exe'
+            Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?LinkID=121721&arch=x64' -OutFile $definitionPackage -TimeoutSec 120
+            $packageSignature = Get-AuthenticodeSignature -FilePath $definitionPackage
+            if ($packageSignature.Status -ne 'Valid' -or $packageSignature.SignerCertificate.Subject -notmatch 'O=Microsoft Corporation(?:,|$)') {
+              throw 'Standalone Defender package did not have a valid Microsoft signature. Release stopped.'
+            }
+            $definitionProcess = Start-Process -FilePath $definitionPackage -WindowStyle Hidden -Wait -PassThru
+            if ($definitionProcess.ExitCode -ne 0) { throw "Standalone Defender update failed: $($definitionProcess.ExitCode). Release stopped." }
           }
+          $status = Get-MpComputerStatus
+          if (!$status.AMServiceEnabled -or !$status.AntivirusEnabled -or !$status.AntivirusSignatureLastUpdated -or
+              ([DateTime]::UtcNow - $status.AntivirusSignatureLastUpdated.ToUniversalTime()).TotalHours -gt 24) {
+            throw 'Defender is unavailable or its definitions are over 24 hours old. Release stopped.'
+          }
+          Write-Host "Scanning with Defender definitions $($status.AntivirusSignatureVersion)."
           $scanner = Get-ChildItem "$env:ProgramData/Microsoft/Windows Defender/Platform/*/MpCmdRun.exe" |
             Sort-Object LastWriteTime -Descending | Select-Object -First 1
           if (!$scanner) { throw 'Microsoft Defender scanner was not found.' }
