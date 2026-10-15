@@ -1,3 +1,5 @@
 /* Reading and answer practice */
 .answer-language-keyboard{margin:14px 0;text-align:left}.answer-language-keyboard summary{font-weight:600;cursor:pointer}.answer-language-keyboard .keyboard{justify-content:flex-start}.answer-language-keyboard [aria-pressed=true]{outline:2px solid var(--teal)}
 .reading-story{max-width:900px;margin:20px auto}.reading-passage{font-size:1.2rem;line-height:1.8;margin:20px 0}.reading-current{border-left:4px solid var(--teal);padding:12px 16px;background:#edf4ed;border-radius:0 10px 10px 0}.reading-previous{color:var(--muted);padding-left:20px}.reading-story form{margin:18px 0}.reading-story input,#english-spelling-answer{display:block;width:100%;margin:10px 0}.reading-story .feedback{margin-bottom:16px}
+
+.reading-story textarea{display:block;width:100%;min-height:200px;padding:14px;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);font:inherit;line-height:1.7;resize:vertical}.reading-translation{white-space:pre-wrap;line-height:1.7}.reading-passage p{margin:0 0 1em}

@@ -1,9 +1,11 @@
-# Reading and translation practice — 1.5.21
+# Reading and translation practice — 1.5.24
 
-- Shared on-screen keyboards for foreign-language answer fields, including learned dialogue. Existing lesson and spelling keyboards are retained. Added keyboards support accents, Shift, punctuation, digits, cursor selection and Backspace.
-- Flashcards and spelling now offer My learned words. A word qualifies after successful course recall, Got it on a flashcard, or correct spelling. Saved-only or failed-only words do not qualify. An empty learned deck stays empty and explains how to add words.
-- Typing & spelling offers Translate into English as well as the selected language. English recall has its own retry queue; correct words stay completed. Feedback waits for Continue. Uses supplied meanings and common punctuation/contraction variants, not an online semantic grading service.
-- Reading stories is in Learn. Twenty-one original stories (three per language) cover all seven current languages. Four-, five- and seven-sentence stages unlock at zero, eight and thirty completed lessons. Each sentence is translated into English and receives an example translation plus an explanation; feedback never auto-advances. Unfinished stories resume on the same device/account/language.
-- New practice is local and does not add leaderboard points or coins. No SQL migration is required. Existing curriculum IDs, progress, points and completion records are untouched.
+Read a complete story, shown in paragraphs, and translate the whole passage into one English text area. Starter, developing and longer stages contain 6, 8 and 10 connected sentences; they unlock at 0, 8 and 30 completed lessons. Twenty-one original stories cover all seven current languages.
 
-Validation: actual app scripts loaded into DOM tests; all seven keyboards, selection/Backspace, learned/empty decks, English correct/wrong retries, story milestones, feedback and resume passed. Browser visual preview was unavailable because the browser could not reach the local server; Windows installation was not tested.
+Enter checks the full translation. Shift+Enter inserts a new paragraph. Feedback compares the saved draft with the complete example translation and optional story notes. Known reference variants are recognised; different natural wording is not automatically labelled wrong. Feedback waits for Enter or the Continue button. Paragraph audio stays within the existing speech-length limit.
+
+Drafts and completion save locally for the current account/device profile and language. Existing sentence-era position, answer history and completion flags are retained. Whole-story practice adds a separate record instead of deleting previous progress. Course records, points and rewards are unchanged. No SQL migration or new leaderboard reward.
+
+Foreign-language answer keyboards, English spelling and My learned words filtering from 1.5.21 remain included. Shared Enter handling across practice areas remains included.
+
+Validation: actual app scripts loaded into DOM tests; whole-passage display, draft resume, historical progress preservation, whole-story reference combinations, Enter/Shift+Enter, held-key protection, button completion, safe text rendering and paragraph audio lengths passed for all seven languages. No installed Windows update test or browser visual verification was performed for this change.
