@@ -8,7 +8,7 @@
  function unlock(state,curriculum){while(state.unlocked<curriculum.lessons.length&&curriculum.lessons[state.unlocked].items.every(w=>state.items[w.id]?.successes>=1))state.unlocked++;return state;}
  function answer(state,curriculum,id,answerText,now=Date.now(),assisted=false){
   unlock(state,curriculum);const item=curriculum.lessons.flatMap(l=>l.items).find(w=>w.id===id);if(!item||item.lesson>state.unlocked)throw Error('Finish the earlier lesson reviews first.');
-  const correct=normalize(answerText)===normalize(item.ru);if(assisted)return {correct,assisted:true,earned:0,state};
+  const correct=normalize(curriculum.language==='la'?String(answerText).normalize('NFD').replace(/\u0304/g,'').normalize('NFC'):answerText)===normalize(item.ru);if(assisted)return {correct,assisted:true,earned:0,state};
   const date=day(now),daily=state.daily[date] ||= {attempts:0,correct:0,successIds:[],spacedIds:[],challenges:[]};daily.attempts++;if(correct)daily.correct++;
   const p=state.items[id] ||= {successes:0,lastSuccess:null,due:0,interval:0,attempts:0,mistakes:0};p.attempts++;let earned=0;
   const award=(key,points)=>{if(state.awards[key])return;state.awards[key]=true;earned+=points;state.points=(BigInt(state.points)+BigInt(points)).toString();};

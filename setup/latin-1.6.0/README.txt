@@ -1,0 +1,2 @@
+Latin 1.6.0
+Run SQL files 01 through 05 separately, in order. Run 06 last to verify. Existing course, wallet/points, profiles and Word Drift setup must be installed first. These files add Latin only and preserve previous learner records. All sections are rerunnable. Install app 1.6.0 to see Latin. Do not rerun older language-enablement scripts afterwards; they may replace the newly expanded function allowlists.

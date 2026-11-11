@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$TextBase64,[ValidateSet('ru','it','es','fr','de','zh','ko','pt-br','pt-pt')][string]$Language,[int]$Rate=-1)
+param([Parameter(Mandatory=$true)][string]$TextBase64,[ValidateSet('ru','it','es','fr','de','zh','ko','pt-br','pt-pt','la')][string]$Language,[int]$Rate=-1)
 $ErrorActionPreference='Stop'
 Add-Type -AssemblyName System.Speech
 $speaker=New-Object System.Speech.Synthesis.SpeechSynthesizer

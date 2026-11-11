@@ -1,6 +1,7 @@
 // Course assets must be registered explicitly. Never substitute another language.
 window.GlossixLanguages = (() => {
   const catalog = Object.freeze({
+    la: {name:'Latin',native:'Lingua Latina',locale:'la',direction:'ltr',status:'available'},
     ru: {name:'Russian',native:'Русский',locale:'ru-RU',direction:'ltr',status:'available'},
     it: {name:'Italian',native:'Italiano',locale:'it-IT',direction:'ltr',status:'available'},
     es: {name:'Spanish',native:'Español',locale:'es-ES',direction:'ltr',status:'preview',priority:1},
